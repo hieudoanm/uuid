@@ -5,19 +5,24 @@ import path from 'path';
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
 
-// Shared config factory
-const createConfig = () => ({
+export default {
   mode,
   devtool: isProduction ? 'source-map' : 'inline-source-map',
-  entry: './src/background.ts',
+  entry: {
+    background: './src/background.ts',
+    content: './src/content.ts',
+  },
   output: {
-    path: path.resolve(__dirname, `dist`), // dist-chrome or dist-firefox
-    filename: 'background.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
     clean: true,
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: '.', to: '.', context: 'public' }],
+      patterns: [
+        // Copy manifest and static files (icons, etc.)
+        { from: '.', to: '.', context: 'public' },
+      ],
     }),
   ],
   module: {
@@ -36,6 +41,4 @@ const createConfig = () => ({
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
   },
-});
-
-export default createConfig();
+};
