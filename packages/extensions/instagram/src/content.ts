@@ -1,27 +1,24 @@
-document.addEventListener('click', (e: MouseEvent) => {
+document.addEventListener('dblclick', (e: MouseEvent) => {
   const maxLevels = 3; // Change this number for how far to go up
   let target = e.target as HTMLElement;
   let currentLevel = 0;
 
-  console.log('[IG Downloader] Initial clicked element:', target);
+  console.log('[IG Downloader] Initial double-clicked element:', target);
 
   let img: HTMLImageElement | null = null;
 
   while (target && currentLevel <= maxLevels) {
-    // Check if this element itself is an image
     if (target.tagName.toLowerCase() === 'img') {
       img = target as HTMLImageElement;
       break;
     }
 
-    // Or if it contains an image inside
     const foundImg = target.querySelector('img');
     if (foundImg) {
       img = foundImg;
       break;
     }
 
-    // Go up to parent
     target = target.parentElement as HTMLElement;
     currentLevel++;
   }

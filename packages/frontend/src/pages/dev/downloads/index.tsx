@@ -68,6 +68,13 @@ const DownloadsPage: NextPage = () => {
       label: 'Instagram',
       category: Category.Extension,
     },
+    {
+      id: 'youtube',
+      link: 'https://github.com/hieudoanm/mark/tree/master/packages/extensions/youtube/download',
+      emoji: '🎥',
+      label: 'YouTube',
+      category: Category.Extension,
+    },
   ];
 
   // Group by category
