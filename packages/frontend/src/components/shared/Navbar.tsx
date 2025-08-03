@@ -34,7 +34,7 @@ const links = [
     id: 'dev',
     title: 'Dev',
     options: [
-      { id: 'cli', href: '/dev/cli', label: 'Command Line Interface (CLI)' },
+      { id: 'downloads', href: '/dev/downloads', label: 'Downloads' },
       { id: 'openapi2postmanv2', href: '/dev/openapi/postmanv2', label: 'OpenAPI to PostmanV2' },
       { id: 'reverse-proxy', href: '/dev/reverse/proxy', label: 'Reverse Proxy' },
       { id: 'uuid', href: '/dev/uuid', label: 'Universally Unique Identifier (UUID)' },

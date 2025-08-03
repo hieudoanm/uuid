@@ -1,5 +1,5 @@
 lint:
-	web-ext lint --source-dir ./dist/firefox
+	web-ext lint --source-dir ./dist
 
 build:
-	web-ext build --source-dir ./dist/firefox --artifacts-dir ./download/firefox
+	web-ext build --source-dir ./dist --artifacts-dir ./download

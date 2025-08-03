@@ -6,29 +6,18 @@ const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
 
 // Shared config factory
-const createConfig = (target: string) => ({
+const createConfig = () => ({
   mode,
   devtool: isProduction ? 'source-map' : 'inline-source-map',
   entry: './src/background.ts',
   output: {
-    path: path.resolve(__dirname, `dist/${target}`), // dist-chrome or dist-firefox
+    path: path.resolve(__dirname, `dist`), // dist-chrome or dist-firefox
     filename: 'background.js',
     clean: true,
   },
   plugins: [
     new CopyPlugin({
-      patterns: [
-        { from: '.', to: '.', context: 'public' },
-        {
-          // Copy correct manifest for target
-          from: `manifest/manifest.${target}.json`,
-          to: 'manifest.json',
-          transform(content) {
-            // Optionally tweak manifest here if needed
-            return content;
-          },
-        },
-      ],
+      patterns: [{ from: '.', to: '.', context: 'public' }],
     }),
   ],
   module: {
@@ -50,4 +39,4 @@ const createConfig = (target: string) => ({
 });
 
 // Export two configs (Chrome + Firefox)
-export default [createConfig('chrome'), createConfig('firefox')];
+export default createConfig();

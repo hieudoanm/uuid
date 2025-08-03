@@ -16,10 +16,8 @@
   "packageManager": "pnpm@10.14.0",
   "private": true,
   "scripts": {
-    "prebuild": "rimraf dist download && pnpm run lint && pnpm run format",
-    "build": "pnpm run build:chrome && pnpm run build:firefox",
-    "build:chrome": "webpack --config webpack.config.ts --env target=chrome",
-    "build:firefox": "webpack --config webpack.config.ts --env target=firefox",
+    "prebuild": "rimraf dist download/*.zip && pnpm run lint && pnpm run format",
+    "build": "webpack --config webpack.config.ts",
     "postbuild": "make lint && make build",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "format": "prettier --cache --write ."
