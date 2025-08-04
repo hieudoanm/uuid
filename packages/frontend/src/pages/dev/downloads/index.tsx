@@ -28,9 +28,16 @@ const DownloadsPage: NextPage = () => {
     },
     {
       id: 'micro',
-      link: 'https://github.com/hieudoanm/mark/tree/master/packages/cli/go.dev/micro/bin',
+      link: 'https://github.com/hieudoanm/mark/tree/master/packages/cli/go.dev/cobra.dev/micro/bin',
       emoji: '🐍',
       label: 'Micro',
+      category: Category.CLI,
+    },
+    {
+      id: 'tg',
+      link: 'https://github.com/hieudoanm/mark/tree/master/packages/cli/go.dev/cobra.dev/tg/bin',
+      emoji: '✈️',
+      label: 'Telegram',
       category: Category.CLI,
     },
     {
