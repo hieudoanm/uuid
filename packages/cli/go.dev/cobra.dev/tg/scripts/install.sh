@@ -2,8 +2,8 @@
 set -e
 
 # -------- CONFIGURE --------
-RAW_URL="https://raw.githubusercontent.com/hieudoanm/micro/packages/cli/go.dev/cobra.dev/micro/bin/micro" # <-- Direct raw link to binary
-BINARY_NAME="micro"
+RAW_URL="https://raw.githubusercontent.com/hieudoanm/micro/packages/cli/go.dev/cobra.dev/tg/bin/tg" # <-- Direct raw link to binary
+BINARY_NAME="tg"
 # ----------------------------
 
 # Default install dir (local)

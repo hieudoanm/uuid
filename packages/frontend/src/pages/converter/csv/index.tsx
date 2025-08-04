@@ -2,7 +2,7 @@ import { Divider } from '@editor/components/shared/Divider';
 import { Glass } from '@editor/components/shared/Glass';
 import { Navbar } from '@editor/components/shared/Navbar';
 import { copy } from '@editor/utils/copy';
-import { csv, csv2json, csv2sql } from '@editor/utils/csv/csv';
+import { csv, csv2json, csv2sql, Format } from '@editor/utils/csv/csv';
 import { NextPage } from 'next';
 import { ChangeEvent, FC, useState } from 'react';
 
@@ -74,11 +74,11 @@ const CSVPage: NextPage = () => {
   const [{ from = INITIAL_CSV, to = '', format = 'html' }, setState] = useState<{
     from: string;
     to: string;
-    format: string;
+    format: Format;
   }>({
     from: INITIAL_CSV,
     to: csv2sql(INITIAL_CSV),
-    format: 'sql',
+    format: Format.SQL,
   });
 
   return (
@@ -94,8 +94,9 @@ const CSVPage: NextPage = () => {
             value={format}
             onChange={(event: ChangeEvent<HTMLSelectElement>) =>
               setState((previous) => {
-                const to = csv(from).format(event.target.value);
-                return { ...previous, format: event.target.value, to };
+                const newFormat = event.target.value as Format;
+                const to = csv(from).format(newFormat);
+                return { ...previous, format: newFormat, to };
               })
             }>
             <option value="html">HTML</option>
@@ -113,7 +114,7 @@ const CSVPage: NextPage = () => {
                 value={from}
                 onChange={(event) => {
                   setState((previous) => {
-                    const to = csv(from).format(format);
+                    const to = csv(from).format(format as Format);
                     return { ...previous, from: event.target.value, to };
                   });
                 }}

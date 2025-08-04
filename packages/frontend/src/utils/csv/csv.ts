@@ -1,86 +1,111 @@
-type Options = { delimiter?: string; quote?: string };
+type Options = {
+  delimiter?: string;
+  quote?: string;
+};
 
-const defaultOptions = { delimiter: ',', quote: '"' };
+const defaultOptions: Required<Options> = {
+  delimiter: ',',
+  quote: '"',
+};
 
-export const csv2json = <T extends Record<string, string>>(
-  string: string,
-  { delimiter = ',', quote = '"' }: Options = defaultOptions,
-): T[] => {
-  const lines: string[] = string.split('\n');
-  const header: string = lines[0] ?? '';
-  if (!header) return [];
-  const rows: string[] = lines.splice(1);
-  const keys: string[] = header.split(delimiter);
-  return rows.map((row: string) => {
+/**
+ * Converts a CSV string into an array of objects.
+ */
+export const csv2json = <T extends Record<string, string>>(input: string, options: Options = defaultOptions): T[] => {
+  const { delimiter, quote } = { ...defaultOptions, ...options };
+
+  // Split into lines and trim trailing newlines
+  const lines = input
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (lines.length === 0) return [];
+
+  // Extract header row
+  const rawHeader = lines[0];
+  const headers = rawHeader.split(delimiter).map((h) => h.replace(new RegExp(quote, 'g'), '').trim());
+
+  // Parse each row into an object
+  return lines.slice(1).map((row) => {
     const cells = row.split(delimiter);
-    const data: T = {} as T;
-    for (const [index, key_] of keys.entries()) {
-      const regex = new RegExp(quote, 'g');
-      const key: string = key_.replace(regex, '');
-      const value = (cells[index] || '').toString().replace(regex, '');
-      Object.assign(data, { [key]: value });
-    }
-    return data;
+    const record = {} as Record<string, string>;
+
+    headers.forEach((header, idx) => {
+      const rawValue = cells[idx] ?? '';
+      const cleaned = rawValue.replace(new RegExp(quote, 'g'), '').trim();
+      record[header] = cleaned;
+    });
+
+    return record as T;
   });
 };
 
+/**
+ * Converts CSV to Markdown table format.
+ */
 export const csv2md = (csv: string): string => {
-  const data: Record<string, string>[] = csv2json(csv);
-  const header = data[0] ?? {};
-  const headers = Object.keys(header);
-  const headerConfigs = headers.map((header: string) => {
-    const valuesByHeader = data.map((item) => item[header] ?? '');
-    const maxLength: number = Math.max(...valuesByHeader.map((value) => value.length), header.length);
-    return { header, length: maxLength };
-  });
-  const headerRow: string =
-    headerConfigs.length > 0
-      ? `| ${headerConfigs
-          .map(({ header = '', length = 0 }) => {
-            const padding: number = Math.max(0, length - header.length);
-            return `${header}${' '.repeat(padding)}`;
-          })
-          .join(' | ')} |`
-      : '';
-  const dividerRow: string =
-    headers.length > 0 ? `| ${headerConfigs.map(({ length = 0 }) => '-'.repeat(length)).join(' | ')} |` : '';
-  const rows: string = data
-    .map((item) => {
-      const row = headerConfigs
-        .map(({ header, length }) => {
-          const value = item[header] ?? '';
-          const padding: number = Math.max(0, length - (value.length ?? 0));
-          return `${value}${' '.repeat(padding)}`;
-        })
-        .join(' | ');
-      return `| ${row} |`;
+  const data = csv2json(csv);
+  if (data.length === 0) return '';
+
+  const headers = Object.keys(data[0]);
+
+  // Calculate column widths based on max header/value length
+  const columnWidths = headers.map((header) =>
+    Math.max(header.length, ...data.map((row) => (row[header] ?? '').length)),
+  );
+
+  const formatRow = (values: string[]) => `| ${values.map((val, i) => val.padEnd(columnWidths[i], ' ')).join(' | ')} |`;
+
+  const headerRow = formatRow(headers);
+  const dividerRow = `| ${columnWidths.map((len) => '-'.repeat(len)).join(' | ')} |`;
+  const bodyRows = data.map((row) => formatRow(headers.map((h) => row[h] ?? '')));
+
+  return [headerRow, dividerRow, ...bodyRows].join('\n');
+};
+
+/**
+ * Converts CSV to SQL insert statements.
+ */
+export const csv2sql = (csv: string, table = 'schema.table'): string => {
+  const data = csv2json(csv);
+  if (data.length === 0) return '';
+
+  return data
+    .map((row) => {
+      const columns = Object.keys(row)
+        .map((col) => `"${col}"`)
+        .join(', ');
+
+      const values = Object.values(row)
+        .map((val) => `"${val}"`)
+        .join(', ');
+
+      return `INSERT INTO ${table} (${columns}) VALUES (${values});`;
     })
     .join('\n');
-  const md = `${headerRow}\n${dividerRow}\n${rows}`;
-  return md;
 };
 
-export const csv2sql = (csv: string): string => {
-  const data: Record<string, string>[] = csv2json(csv);
-  const sql: string = data
-    .map((item) => {
-      const keys: string[] = Object.keys(item);
-      const values: string[] = Object.values(item);
-      const columns: string = keys.map((key: string) => `"${key}"`).join(', ');
-      const columnValues: string = values.map((value: string) => `"${value}"`).join(', ');
-      return `INSERT INTO schema.table (${columns}) VALUES (${columnValues})`;
-    })
-    .join(';\n');
-  return sql;
-};
+export enum Format {
+  JSON = 'json',
+  Markdown = 'md',
+  SQL = 'sql',
+}
 
-export const csv = (csv: string) => {
-  return {
-    format: (format: string): string => {
-      if (format === 'json') return JSON.stringify(csv2json(csv), null, 2);
-      if (format === 'md') return csv2md(csv);
-      if (format === 'sql') return csv2sql(csv);
-      return csv;
-    },
-  };
-};
+/**
+ * High-level API: format CSV into various formats.
+ */
+export const csv = (input: string) => ({
+  format: (format: Format): string => {
+    switch (format) {
+      case Format.JSON:
+        return JSON.stringify(csv2json(input), null, 2);
+      case Format.Markdown:
+        return csv2md(input);
+      case Format.SQL:
+        return csv2sql(input);
+      default:
+        return input;
+    }
+  },
+});
