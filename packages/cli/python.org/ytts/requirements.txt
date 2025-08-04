@@ -4,4 +4,4 @@ pyfiglet==1.0.3
 requests==2.32.4
 rich==14.1.0
 yaspin==3.1.0
-youtube-transcript-api==1.2.1
+youtube-transcript-api==1.2.2
