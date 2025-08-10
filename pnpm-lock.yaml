@@ -431,7 +431,7 @@ importers:
         version: 15.4.6(@babel/core@7.28.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       openai:
         specifier: 5.12.2
-        version: 5.12.2(ws@8.18.3)(zod@4.0.16)
+        version: 5.12.2(ws@8.18.3)(zod@4.0.17)
       openapi-to-postmanv2:
         specifier: 5.0.1
         version: 5.0.1(encoding@0.1.13)
@@ -460,8 +460,8 @@ importers:
         specifier: 11.1.0
         version: 11.1.0
       zod:
-        specifier: 4.0.16
-        version: 4.0.16
+        specifier: 4.0.17
+        version: 4.0.17
     devDependencies:
       '@capacitor/cli':
         specifier: 7.4.2
@@ -7325,8 +7325,8 @@ packages:
   zlibjs@0.3.1:
     resolution: {integrity: sha512-+J9RrgTKOmlxFSDHo0pI1xM6BLVUv+o0ZT9ANtCxGkjIVCCUdx9alUF8Gm+dGLKbkkkidWIHFDZHDMpfITt4+w==}
 
-  zod@4.0.16:
-    resolution: {integrity: sha512-Djo/cM339grjI7/HmN+ixYO2FzEMcWr/On50UlQ/RjrWK1I/hPpWhpC76heCptnRFpH0LMwrEbUY50HDc0V8wg==}
+  zod@4.0.17:
+    resolution: {integrity: sha512-1PHjlYRevNxxdy2JZ8JcNAw7rX8V9P1AKkP+x/xZfxB0K5FYfuV+Ug6P/6NVSR2jHQ+FzDDoDHS04nYUsOIyLQ==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -13285,10 +13285,10 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  openai@5.12.2(ws@8.18.3)(zod@4.0.16):
+  openai@5.12.2(ws@8.18.3)(zod@4.0.17):
     optionalDependencies:
       ws: 8.18.3
-      zod: 4.0.16
+      zod: 4.0.17
 
   openapi-to-postmanv2@5.0.1(encoding@0.1.13):
     dependencies:
@@ -15452,6 +15452,6 @@ snapshots:
 
   zlibjs@0.3.1: {}
 
-  zod@4.0.16: {}
+  zod@4.0.17: {}
 
   zwitch@2.0.4: {}
