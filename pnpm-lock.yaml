@@ -97,8 +97,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0
       '@types/chrome':
-        specifier: 0.1.3
-        version: 0.1.3
+        specifier: 0.1.4
+        version: 0.1.4
       '@types/node':
         specifier: 24.2.1
         version: 24.2.1
@@ -154,8 +154,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0
       '@types/chrome':
-        specifier: 0.1.3
-        version: 0.1.3
+        specifier: 0.1.4
+        version: 0.1.4
       '@types/firefox-webext-browser':
         specifier: 120.0.4
         version: 120.0.4
@@ -214,8 +214,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0
       '@types/chrome':
-        specifier: 0.1.3
-        version: 0.1.3
+        specifier: 0.1.4
+        version: 0.1.4
       '@types/node':
         specifier: 24.2.1
         version: 24.2.1
@@ -271,8 +271,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0
       '@types/chrome':
-        specifier: 0.1.3
-        version: 0.1.3
+        specifier: 0.1.4
+        version: 0.1.4
       '@types/firefox-webext-browser':
         specifier: 120.0.4
         version: 120.0.4
@@ -331,8 +331,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0
       '@types/chrome':
-        specifier: 0.1.3
-        version: 0.1.3
+        specifier: 0.1.4
+        version: 0.1.4
       '@types/firefox-webext-browser':
         specifier: 120.0.4
         version: 120.0.4
@@ -1786,8 +1786,8 @@ packages:
   '@types/babel__traverse@7.20.7':
     resolution: {integrity: sha512-dkO5fhS7+/oos4ciWxyEyjWe48zmG6wbCheo/G2ZnHx4fs3EU6YC6UM8rk56gAjNJ9P3MTH2jo5jb92/K6wbng==}
 
-  '@types/chrome@0.1.3':
-    resolution: {integrity: sha512-KVOIHEKjDZXMg8c18Ir3kbLc+bb8JxZjNJv27Wen3F0I/eeTyrYm7tWOjGhoBjI9fFQfjsTSyFcENBo9Wbl5kw==}
+  '@types/chrome@0.1.4':
+    resolution: {integrity: sha512-vfISO7SPppN3OKVUqWujtZ4vux3nhDqKaHYEHgfQuPARHuWJ3jjyc1s13H0ckzEc86/neTkCl1TeW72UK6jYKA==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -8833,7 +8833,7 @@ snapshots:
     dependencies:
       '@babel/types': 7.28.1
 
-  '@types/chrome@0.1.3':
+  '@types/chrome@0.1.4':
     dependencies:
       '@types/filesystem': 0.0.36
       '@types/har-format': 1.2.16
