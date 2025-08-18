@@ -424,8 +424,8 @@ importers:
         specifier: 7.0.1
         version: 7.0.1
       marked:
-        specifier: 16.1.2
-        version: 16.1.2
+        specifier: 16.2.0
+        version: 16.2.0
       next:
         specifier: 15.4.6
         version: 15.4.6(@babel/core@7.28.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -4932,8 +4932,8 @@ packages:
     engines: {node: '>= 8.16.2'}
     hasBin: true
 
-  marked@16.1.2:
-    resolution: {integrity: sha512-rNQt5EvRinalby7zJZu/mB+BvaAY2oz3wCuCjt1RDrWNpS1Pdf9xqMOeC9Hm5adBdcV/3XZPJpG58eT+WBc0XQ==}
+  marked@16.2.0:
+    resolution: {integrity: sha512-LbbTuye+0dWRz2TS9KJ7wsnD4KAtpj0MVkWc90XvBa6AslXsT0hTBVH5k32pcSyHH1fst9XEFJunXHktVy0zlg==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -12592,7 +12592,7 @@ snapshots:
 
   marked@1.2.9: {}
 
-  marked@16.1.2: {}
+  marked@16.2.0: {}
 
   marky@1.3.0: {}
 
