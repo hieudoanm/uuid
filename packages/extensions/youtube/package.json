@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.34.0",
-    "@eslint/json": "0.13.1",
+    "@eslint/json": "0.13.2",
     "@eslint/markdown": "7.2.0",
     "@types/chrome": "0.1.4",
     "@types/firefox-webext-browser": "120.0.4",
