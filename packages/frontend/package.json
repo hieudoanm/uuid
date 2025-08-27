@@ -76,7 +76,7 @@
     "fabric": "6.7.1",
     "file-saver": "2.0.5",
     "husky": "9.1.7",
-    "jest": "30.0.5",
+    "jest": "30.1.0",
     "kill-port": "2.0.1",
     "pdf-lib": "1.17.1",
     "pdfjs-dist": "5.4.54",
