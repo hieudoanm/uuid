@@ -97,8 +97,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       '@types/chrome':
-        specifier: 0.1.6
-        version: 0.1.6
+        specifier: 0.1.9
+        version: 0.1.9
       '@types/node':
         specifier: 24.3.1
         version: 24.3.1
@@ -154,8 +154,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       '@types/chrome':
-        specifier: 0.1.6
-        version: 0.1.6
+        specifier: 0.1.9
+        version: 0.1.9
       '@types/firefox-webext-browser':
         specifier: 120.0.4
         version: 120.0.4
@@ -214,8 +214,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       '@types/chrome':
-        specifier: 0.1.6
-        version: 0.1.6
+        specifier: 0.1.9
+        version: 0.1.9
       '@types/node':
         specifier: 24.3.1
         version: 24.3.1
@@ -271,8 +271,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       '@types/chrome':
-        specifier: 0.1.6
-        version: 0.1.6
+        specifier: 0.1.9
+        version: 0.1.9
       '@types/firefox-webext-browser':
         specifier: 120.0.4
         version: 120.0.4
@@ -331,8 +331,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       '@types/chrome':
-        specifier: 0.1.6
-        version: 0.1.6
+        specifier: 0.1.9
+        version: 0.1.9
       '@types/firefox-webext-browser':
         specifier: 120.0.4
         version: 120.0.4
@@ -391,8 +391,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       '@types/chrome':
-        specifier: 0.1.6
-        version: 0.1.6
+        specifier: 0.1.9
+        version: 0.1.9
       '@types/firefox-webext-browser':
         specifier: 120.0.4
         version: 120.0.4
@@ -1860,8 +1860,8 @@ packages:
   '@types/babel__traverse@7.28.0':
     resolution: {integrity: sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q==}
 
-  '@types/chrome@0.1.6':
-    resolution: {integrity: sha512-Rnv8CDthTPA4/ojSWw5A//7Ew7P2pAJECxAR8YeOhehaUKZ7WX5fHIZbEw8m6bTRNzFyhxhzUb6T3gjKMry+2w==}
+  '@types/chrome@0.1.9':
+    resolution: {integrity: sha512-Tjzql/wuGkC4Q3FWSziPMbggN0FwQZph4WFhzvnBfmnipzX1vtNBNToAGGpSqAAf26wfKFfZTZmxN8+pgMK9Rw==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -8911,7 +8911,7 @@ snapshots:
     dependencies:
       '@babel/types': 7.28.2
 
-  '@types/chrome@0.1.6':
+  '@types/chrome@0.1.9':
     dependencies:
       '@types/filesystem': 0.0.36
       '@types/har-format': 1.2.16
