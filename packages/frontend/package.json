@@ -85,7 +85,7 @@
     "react-pdf": "10.1.0",
     "rimraf": "6.0.1",
     "tailwindcss": "4.1.13",
-    "ts-jest": "29.4.1",
+    "ts-jest": "29.4.2",
     "ts-node": "10.9.2",
     "typescript": "5.9.2",
     "yaml": "2.8.1"
