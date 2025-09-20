@@ -490,8 +490,8 @@ importers:
         specifier: 15.5.3
         version: 15.5.3(@babel/core@7.28.3)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       openai:
-        specifier: 5.21.0
-        version: 5.21.0(ws@8.18.3)(zod@4.1.9)
+        specifier: 5.22.0
+        version: 5.22.0(ws@8.18.3)(zod@4.1.9)
       openapi-to-postmanv2:
         specifier: 5.1.0
         version: 5.1.0(encoding@0.1.13)
@@ -5585,8 +5585,8 @@ packages:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
 
-  openai@5.21.0:
-    resolution: {integrity: sha512-E9LuV51vgvwbahPJaZu2x4V6SWMq9g3X6Bj2/wnFiNfV7lmAxYVxPxcQNZqCWbAVMaEoers9HzIxpOp6Vvgn8w==}
+  openai@5.22.0:
+    resolution: {integrity: sha512-uSsYZ+vw9JxUwnMTcT9bj5sGM5qY/4du2BIf1KSqDRZF9nhSlJYsBLPRwBZTOW+HNyjwGviR0SsoDPv5lpPrBw==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -13514,7 +13514,7 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  openai@5.21.0(ws@8.18.3)(zod@4.1.9):
+  openai@5.22.0(ws@8.18.3)(zod@4.1.9):
     optionalDependencies:
       ws: 8.18.3
       zod: 4.1.9
