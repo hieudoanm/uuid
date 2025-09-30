@@ -4,6 +4,8 @@ const config: CapacitorConfig = {
   appId: 'io.github.hieudoanm.micro',
   appName: 'Micro',
   webDir: '../../docs',
+  android: { path: 'mobile/android' },
+  ios: { path: 'mobile/ios' },
 };
 
 export default config;
