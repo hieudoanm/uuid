@@ -1,8 +1,0 @@
-### Summarise YouTube Video Transcript (Local)
-POST http://localhost:10000/api/transcript/summarise
-Content-Type: application/json
-
-{
-  "video_id": "z3prA1py3vU",
-  "language": "en"
-}
