@@ -69,8 +69,8 @@ importers:
         specifier: 7.0.1
         version: 7.0.1
       marked:
-        specifier: 16.3.0
-        version: 16.3.0
+        specifier: 16.4.0
+        version: 16.4.0
       next:
         specifier: 15.5.4
         version: 15.5.4(@babel/core@7.28.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -3099,8 +3099,8 @@ packages:
   makeerror@1.0.12:
     resolution: {integrity: sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==}
 
-  marked@16.3.0:
-    resolution: {integrity: sha512-K3UxuKu6l6bmA5FUwYho8CfJBlsUWAooKtdGgMcERSpF7gcBUrCGsLH7wDaaNOzwq18JzSUDyoEb/YsrqMac3w==}
+  marked@16.4.0:
+    resolution: {integrity: sha512-CTPAcRBq57cn3R8n3hwc2REddc28hjR7RzDXQ+lXLmMJYqn20BaI2cGw6QjgZGIgVfp2Wdfw4aMzgNteQ6qJgQ==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -7852,7 +7852,7 @@ snapshots:
     dependencies:
       tmpl: 1.0.5
 
-  marked@16.3.0: {}
+  marked@16.4.0: {}
 
   math-intrinsics@1.1.0: {}
 
