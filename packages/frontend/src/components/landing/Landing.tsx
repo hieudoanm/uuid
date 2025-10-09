@@ -163,12 +163,6 @@ const content = {
           href: '/other/doi',
         },
         {
-          id: 'periodic-table',
-          title: '🧪 Periodic Table Explorer',
-          description: 'Explore detailed info about all chemical elements.',
-          href: '/other/periodic-table',
-        },
-        {
           id: 'status-dashboard',
           title: '📊 Status Monitor',
           description: 'Check the current system status and service uptime.',

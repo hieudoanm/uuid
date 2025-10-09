@@ -73,7 +73,6 @@ const links = [
       { id: 'chat', href: '/other/chat', label: 'Chat' },
       { id: 'doi', href: '/other/doi', label: 'DOI' },
       { id: 'status', href: '/other/status', label: 'Status' },
-      { id: 'periodic-table', href: '/other/periodic-table', label: 'Periodic Table' },
     ],
   },
 ];
