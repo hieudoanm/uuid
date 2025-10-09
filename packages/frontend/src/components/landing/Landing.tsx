@@ -97,12 +97,6 @@ const content = {
         },
         // Editor
         {
-          id: 'markdown-editor',
-          title: '📝 Markdown Editor',
-          description: 'Write and preview Markdown with live formatting, syntax highlighting, and export support.',
-          href: '/editor/markup',
-        },
-        {
           id: 'manifest-editor',
           title: '📘 Manifest Editor for PWA & Extensions',
           description:
