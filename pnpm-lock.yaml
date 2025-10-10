@@ -63,8 +63,8 @@ importers:
         specifier: 5.8.1
         version: 5.8.1
       html2canvas-pro:
-        specifier: 1.5.11
-        version: 1.5.11
+        specifier: 1.5.12
+        version: 1.5.12
       jstoxml:
         specifier: 7.0.1
         version: 7.0.1
@@ -2480,8 +2480,8 @@ packages:
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
-  html2canvas-pro@1.5.11:
-    resolution: {integrity: sha512-W4pEeKLG8+9a54RDOSiEKq7gRXXDzt0ORMaLXX+l6a3urSKbmnkmyzcRDCtgTOzmHLaZTLG2wiTQMJqKLlSh3w==}
+  html2canvas-pro@1.5.12:
+    resolution: {integrity: sha512-egtJIe6YXMKSLX/ls400OJD6tzEVtATJOE++mnXmxMWyqcu9HDXDoLiWeXnGv45QW2ZaIiDlXw46Gxqrqw6SEw==}
     engines: {node: '>=16.0.0'}
 
   http-proxy-agent@5.0.0:
@@ -7026,7 +7026,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  html2canvas-pro@1.5.11:
+  html2canvas-pro@1.5.12:
     dependencies:
       css-line-break: 2.1.0
       text-segmentation: 1.0.3
