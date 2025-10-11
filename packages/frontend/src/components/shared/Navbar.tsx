@@ -5,14 +5,6 @@ import { Dropdown } from './Dropdown';
 
 const links = [
   {
-    id: 'chess',
-    title: 'Chess',
-    options: [
-      { id: 'chessboard', href: '/chess/board', label: 'Board' },
-      { id: 'chess-elo', href: '/chess/elo', label: 'ELO' },
-    ],
-  },
-  {
     id: 'clock',
     title: 'Clock',
     options: [

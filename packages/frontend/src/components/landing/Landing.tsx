@@ -20,23 +20,10 @@ const content = {
     features: {
       title: 'Blazing-Fast Tools — All in Your Browser',
       subtitle:
-        'From chess utilities to text converters, calculators, redaction tools, and GitHub preview generators — every feature works offline, with privacy built-in. No accounts. No uploads.',
+        'From clock utilities to text converters, calculators, redaction tools, and GitHub preview generators — every feature works offline, with privacy built-in. No accounts. No uploads.',
       // List of features with descriptions and links
       // Each feature has an id, href, title, and description
       features: [
-        // Chess
-        {
-          id: 'chess-board',
-          title: '🔀 Chessboard',
-          description: 'Explore randomized Chess960 starting positions and understand their dynamics.',
-          href: '/chess/board',
-        },
-        {
-          id: 'chess-elo',
-          title: '📈 ELO Calculator',
-          description: 'Estimate your new rating after a game or tournament using customizable ELO formulas.',
-          href: '/chess/elo',
-        },
         // Clock
         {
           id: 'pomodoro-timer',
@@ -173,7 +160,7 @@ const content = {
     callToAction: {
       title: 'All-in-One Productivity & Dev Suite — No Installs Required',
       subtitle:
-        'Whether you’re editing code, converting formats, redacting PDFs, exploring chess theory, or generating visuals — do it all, instantly, right in your browser.',
+        'Whether you’re editing code, converting formats, redacting PDFs, or generating visuals — do it all, instantly, right in your browser.',
       action: 'Go to Chat',
       href: '/other/chat',
     },
