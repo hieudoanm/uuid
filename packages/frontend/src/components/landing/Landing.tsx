@@ -71,12 +71,6 @@ const content = {
           href: '/dev/openapi/postmanv2',
         },
         {
-          id: 'dev-reverse-proxy',
-          title: '🔀 Reverse Proxy',
-          description: 'Securely route and manage external API calls through a single, unified gateway.',
-          href: '/dev/reverse/proxy',
-        },
-        {
           id: 'dev-uuid',
           title: '🆔 UUID Generator',
           description: 'Generate secure UUIDs locally with zero tracking.',
