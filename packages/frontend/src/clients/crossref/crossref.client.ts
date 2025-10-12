@@ -60,13 +60,16 @@ export const getWork = async ({
   }
   if (!response?.ok) {
     clearTimeout(timer);
-    console.error(`Failed to generate content: ${response?.statusText ?? 'Unknown error'}`);
+    console.error(
+      `Failed to generate content: ${response?.statusText ?? 'Unknown error'}`,
+    );
     return { reference: null };
   }
   const data: CrossReferenceResponse = await response.json();
   clearTimeout(timer);
   const { message } = data;
-  const published = message['published-print'] ?? message['published-online'] ?? { 'date-parts': [[]] };
+  const published = message['published-print'] ??
+    message['published-online'] ?? { 'date-parts': [[]] };
   return {
     reference: {
       id,

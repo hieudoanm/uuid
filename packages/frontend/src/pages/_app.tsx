@@ -26,7 +26,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         {/* Meta tags for SEO and social media */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={`${APP_NAME} — a privacy-first in-browser editor and utility suite.`} />
+        <meta
+          name="description"
+          content={`${APP_NAME} — a privacy-first in-browser editor and utility suite.`}
+        />
         <meta name="theme-color" content="#171717" />
         {/* Open Graph tags */}
         <meta property="og:title" content={APP_NAME} />
@@ -47,7 +50,8 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="twitter:image" content="/favicon.png" />
       </Head>
       <QueryClientProvider client={new QueryClient()}>
-        <div className={`${geistSans.className} ${geistMono.className} bg-neutral-900 text-neutral-100`}>
+        <div
+          className={`${geistSans.className} ${geistMono.className} bg-neutral-900 text-neutral-100`}>
           <Component {...pageProps} />
         </div>
       </QueryClientProvider>

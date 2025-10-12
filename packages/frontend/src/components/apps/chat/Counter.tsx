@@ -23,13 +23,14 @@ const getMessageIndex = (seconds: number): number => {
 };
 
 export const Counter: FC = () => {
-  const [{ seconds, messageIndex = getMessageIndex(seconds) }, setState] = useState<{
-    seconds: number;
-    messageIndex: number;
-  }>({
-    seconds: 0,
-    messageIndex: 0,
-  });
+  const [{ seconds, messageIndex = getMessageIndex(seconds) }, setState] =
+    useState<{
+      seconds: number;
+      messageIndex: number;
+    }>({
+      seconds: 0,
+      messageIndex: 0,
+    });
   const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -38,7 +39,11 @@ export const Counter: FC = () => {
       clearInterval(intervalRef.current);
     }
     if (seconds > 0) {
-      setState((previous) => ({ ...previous, seconds: 0, messageIndex: getMessageIndex(0) }));
+      setState((previous) => ({
+        ...previous,
+        seconds: 0,
+        messageIndex: getMessageIndex(0),
+      }));
     }
     intervalRef.current = window.setInterval(() => {
       setState((previous) => ({

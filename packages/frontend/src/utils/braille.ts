@@ -1,4 +1,7 @@
-const braille: Record<string, { unicode: string; dots: string; character: string }> = {
+const braille: Record<
+  string,
+  { unicode: string; dots: string; character: string }
+> = {
   // letter
   a: { unicode: 'U+2801', dots: '1', character: '⠁' },
   b: { unicode: 'U+2803', dots: '1-2', character: '⠃' },

@@ -37,7 +37,13 @@ const QRCode: FC = () => {
         <Divider />
         <div className="container mx-auto flex w-full grow flex-col items-center justify-center gap-y-8 p-8">
           <div className="flex w-full flex-col justify-center gap-4 md:flex-row md:gap-8">
-            <Glass.Input id="url" name="url" placeholder="URL" className="grow" value={url} />
+            <Glass.Input
+              id="url"
+              name="url"
+              placeholder="URL"
+              className="grow"
+              value={url}
+            />
             <Glass.Button
               type="button"
               className="w-full md:w-auto"
@@ -51,7 +57,11 @@ const QRCode: FC = () => {
                 type="button"
                 className="w-full md:w-auto"
                 onClick={() => {
-                  download({ content: dataURL, format: 'jpg', filename: 'qrcode' }).image();
+                  download({
+                    content: dataURL,
+                    format: 'jpg',
+                    filename: 'qrcode',
+                  }).image();
                 }}>
                 Download
               </Glass.Button>

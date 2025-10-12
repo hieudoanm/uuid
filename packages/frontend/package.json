@@ -27,7 +27,7 @@
     "build:mobile": "pnpm build:android && pnpm build:ios",
     "prestart": "kill-port 3000",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "get:coinranking": "pnpm ts-node ./scripts/coinranking.ts",
     "get:frankfurter": "pnpm ts-node ./scripts/frankfurter.ts"
   },

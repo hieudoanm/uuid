@@ -13,7 +13,8 @@ export const oklch2hex = (l: number, c: number, h: number): string => {
   const bLin = 0.0556434137 * L_ - 0.2040259133 * m_ + 1.0572251882 * s_;
 
   // Step 3: Linear RGB → RGB
-  const linearToSrgb = (c: number) => (c <= 0.0031308 ? c * 12.92 : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
+  const linearToSrgb = (c: number) =>
+    c <= 0.0031308 ? c * 12.92 : 1.055 * Math.pow(c, 1 / 2.4) - 0.055;
 
   const r = linearToSrgb(rLin);
   const g = linearToSrgb(gLin);

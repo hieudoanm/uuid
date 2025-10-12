@@ -19,16 +19,22 @@ const format = (from: string, style: Style) => {
 const INITIAL_STYLE = 'yaml2json';
 
 const StringsPage = () => {
-  const [{ from = INTIIAL_YAML, to = format(INTIIAL_YAML, INITIAL_STYLE), style = INITIAL_STYLE }, setState] =
-    useState<{
-      from: string;
-      to: string;
-      style: Style;
-    }>({
-      from: INTIIAL_YAML,
-      to: format(INTIIAL_YAML, INITIAL_STYLE),
-      style: INITIAL_STYLE,
-    });
+  const [
+    {
+      from = INTIIAL_YAML,
+      to = format(INTIIAL_YAML, INITIAL_STYLE),
+      style = INITIAL_STYLE,
+    },
+    setState,
+  ] = useState<{
+    from: string;
+    to: string;
+    style: Style;
+  }>({
+    from: INTIIAL_YAML,
+    to: format(INTIIAL_YAML, INITIAL_STYLE),
+    style: INITIAL_STYLE,
+  });
 
   return (
     <div className="flex h-screen w-screen flex-col">
@@ -73,7 +79,11 @@ const StringsPage = () => {
               className="h-full w-full resize-none p-4"
               onChange={(event) => {
                 const value = event.target.value;
-                setState((previous) => ({ ...previous, from: value, to: format(value, style) }));
+                setState((previous) => ({
+                  ...previous,
+                  from: value,
+                  to: format(value, style),
+                }));
               }}
             />
           </div>

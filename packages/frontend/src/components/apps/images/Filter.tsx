@@ -2,25 +2,39 @@ import { Divider } from '@editor/components/shared/Divider';
 import { Glass } from '@editor/components/shared/Glass';
 import { Navbar } from '@editor/components/shared/Navbar';
 import { download } from '@editor/utils/download';
-import { base64, filterAsync, FilterMask, getMimeType, png2ico, png2jpg, svg2png } from '@editor/utils/image';
+import {
+  base64,
+  filterAsync,
+  FilterMask,
+  getMimeType,
+  png2ico,
+  png2jpg,
+  svg2png,
+} from '@editor/utils/image';
 import { FC, useState } from 'react';
 
 const Home: FC = () => {
-  const [{ originalBase64 = '', filteredBase64 = '', file = null }, setState] = useState<{
-    originalBase64: string;
-    filteredBase64: string;
-    file: File | null;
-  }>({
-    originalBase64: '',
-    filteredBase64: '',
-    file: null,
-  });
+  const [{ originalBase64 = '', filteredBase64 = '', file = null }, setState] =
+    useState<{
+      originalBase64: string;
+      filteredBase64: string;
+      file: File | null;
+    }>({
+      originalBase64: '',
+      filteredBase64: '',
+      file: null,
+    });
 
   const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const originalBase64: string = await base64(file);
-      setState((previous) => ({ ...previous, originalBase64, filteredBase64: '', file }));
+      setState((previous) => ({
+        ...previous,
+        originalBase64,
+        filteredBase64: '',
+        file,
+      }));
     }
   };
 
@@ -29,7 +43,12 @@ const Home: FC = () => {
       <div className="flex justify-center gap-4">
         <label className="inline-flex cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-2 font-semibold text-white shadow-lg shadow-black/30 backdrop-blur-lg transition duration-300 hover:bg-white/20 focus:ring-2 focus:ring-white/30 focus:outline-none">
           <span>Upload Image</span>
-          <input type="file" accept="image/*" onChange={handleFile} className="hidden" />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFile}
+            className="hidden"
+          />
         </label>
         {getMimeType(filteredBase64 || originalBase64)?.includes('png') && (
           <Glass.Button
@@ -63,7 +82,9 @@ const Home: FC = () => {
         <div className="container mx-auto flex flex-col gap-y-8 p-8">
           <div
             className="h-64 border border-neutral-800 bg-contain bg-center bg-no-repeat md:h-128"
-            style={{ backgroundImage: `url(${filteredBase64 || originalBase64})` }}
+            style={{
+              backgroundImage: `url(${filteredBase64 || originalBase64})`,
+            }}
           />
           <div className="flex flex-col gap-y-8">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -94,8 +115,14 @@ const Home: FC = () => {
                   <Glass.Button
                     key={mask}
                     onClick={async () => {
-                      const filteredBase64: string = await filterAsync(mask, originalBase64);
-                      setState((previous) => ({ ...previous, filteredBase64: filteredBase64 }));
+                      const filteredBase64: string = await filterAsync(
+                        mask,
+                        originalBase64,
+                      );
+                      setState((previous) => ({
+                        ...previous,
+                        filteredBase64: filteredBase64,
+                      }));
                     }}>
                     Filter - {mask.charAt(0).toUpperCase() + mask.slice(1)}
                   </Glass.Button>

@@ -169,7 +169,10 @@ export type FilterMask =
   | 'twenties'
   | 'vintage';
 
-const rustFilter = async (mask: FilterMask, image: HTMLImageElement): Promise<string> => {
+const rustFilter = async (
+  mask: FilterMask,
+  image: HTMLImageElement,
+): Promise<string> => {
   await init();
 
   const canvas = document.createElement('canvas');
@@ -203,7 +206,10 @@ const rustFilter = async (mask: FilterMask, image: HTMLImageElement): Promise<st
   return base64;
 };
 
-export const filterAsync = (mask: FilterMask, base64: string): Promise<string> => {
+export const filterAsync = (
+  mask: FilterMask,
+  base64: string,
+): Promise<string> => {
   return new Promise((resolve, reject) => {
     const image = new Image();
     image.src = base64;

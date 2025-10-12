@@ -22,31 +22,52 @@ const ChatPage: NextPage = () => {
     ta.style.height = ta.scrollHeight + 'px';
   };
 
-  const [{ message = 'Explain GenAI in a few words', messages = [], model = OpenRouterModel.Deepseek_R1 }, setState] =
-    useState<{
-      message: string;
-      messages: Message[];
-      model: GeminiModel | OpenRouterModel;
-    }>({
-      message: 'Explain GenAI in a few words',
-      messages: [],
-      model: OpenRouterModel.Deepseek_R1,
-    });
+  const [
+    {
+      message = 'Explain GenAI in a few words',
+      messages = [],
+      model = OpenRouterModel.Deepseek_R1,
+    },
+    setState,
+  ] = useState<{
+    message: string;
+    messages: Message[];
+    model: GeminiModel | OpenRouterModel;
+  }>({
+    message: 'Explain GenAI in a few words',
+    messages: [],
+    model: OpenRouterModel.Deepseek_R1,
+  });
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (loading) return;
     if (!message) return;
-    const oldMessages = [...messages, { text: message, role: 'user', loading: false }]
+    const oldMessages = [
+      ...messages,
+      { text: message, role: 'user', loading: false },
+    ]
       .filter(({ loading }) => !loading)
       .map(({ role, text }) => ({ role: role as 'user' | 'ai', text }));
     setState((previous) => {
-      const newUserMessage: Message = { text: previous.message, role: 'user', loading: false, model };
-      const newAiMessage: Message = { text: '', role: 'ai', loading: true, model };
+      const newUserMessage: Message = {
+        text: previous.message,
+        role: 'user',
+        loading: false,
+        model,
+      };
+      const newAiMessage: Message = {
+        text: '',
+        role: 'ai',
+        loading: true,
+        model,
+      };
       const newMessages = [...previous.messages, newUserMessage, newAiMessage];
       return { ...previous, message: '', messages: newMessages };
     });
-    const { data, error } = await tryCatch(trpcClient.genai.generate.mutate({ messages: oldMessages, model }));
+    const { data, error } = await tryCatch(
+      trpcClient.genai.generate.mutate({ messages: oldMessages, model }),
+    );
     let text = '';
     if (error) {
       console.error('Error generating content:', error, data);
@@ -83,7 +104,11 @@ const ChatPage: NextPage = () => {
               <Glass.Button
                 type="button"
                 onClick={() => {
-                  setState((previous) => ({ ...previous, message: '', messages: [] }));
+                  setState((previous) => ({
+                    ...previous,
+                    message: '',
+                    messages: [],
+                  }));
                   scrollToBottom('messages');
                 }}>
                 New Chat
@@ -92,7 +117,9 @@ const ChatPage: NextPage = () => {
           </div>
         </div>
         <Messages messages={messages} />
-        <form onSubmit={onSubmit} className="flex flex-col items-center rounded-2xl bg-neutral-800 p-2">
+        <form
+          onSubmit={onSubmit}
+          className="flex flex-col items-center rounded-2xl bg-neutral-800 p-2">
           <textarea
             autoComplete="off"
             id="message"
@@ -116,25 +143,32 @@ const ChatPage: NextPage = () => {
                 className="w-full appearance-none font-black focus:outline-none"
                 value={model}
                 onChange={(event: ChangeEvent<HTMLSelectElement>) => {
-                  setState((previous) => ({ ...previous, model: event.target.value as GeminiModel }));
+                  setState((previous) => ({
+                    ...previous,
+                    model: event.target.value as GeminiModel,
+                  }));
                 }}>
-                {Object.entries(groupBy(MODELS, 'company')).map(([company, models]) => {
-                  return (
-                    <optgroup key={company} label={company}>
-                      {models.map(({ label, value }) => {
-                        return (
-                          <option key={value} value={value}>
-                            {label}
-                          </option>
-                        );
-                      })}
-                    </optgroup>
-                  );
-                })}
+                {Object.entries(groupBy(MODELS, 'company')).map(
+                  ([company, models]) => {
+                    return (
+                      <optgroup key={company} label={company}>
+                        {models.map(({ label, value }) => {
+                          return (
+                            <option key={value} value={value}>
+                              {label}
+                            </option>
+                          );
+                        })}
+                      </optgroup>
+                    );
+                  },
+                )}
               </select>
             </div>
             <div className="flex items-center gap-x-2 md:gap-x-4">
-              <label htmlFor="file-upload" className="cursor-pointer rounded-full text-neutral-100">
+              <label
+                htmlFor="file-upload"
+                className="cursor-pointer rounded-full text-neutral-100">
                 <input
                   type="file"
                   id="file-upload"

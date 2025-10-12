@@ -14,7 +14,12 @@
     };
     d && d.children.push(c);
     var f = b.slice(0, b.lastIndexOf('/') + 1);
-    return ((a.cache[b] = c.exports), e.call(c.exports, c, c.exports, f, b), (c.loaded = !0), (a.cache[b] = c.exports));
+    return (
+      (a.cache[b] = c.exports),
+      e.call(c.exports, c, c.exports, f, b),
+      (c.loaded = !0),
+      (a.cache[b] = c.exports)
+    );
   }
   ((a.modules = {}),
     (a.cache = {}),
@@ -44,7 +49,8 @@
             (a.pageSize = d.constructor.pageSize),
             a.canTransfer
               ? ((f = function (c) {
-                  for (var b = 0, d = a.data.length; b < d; ++b) ((e = a.data[b]), c.push(e.buffer));
+                  for (var b = 0, d = a.data.length; b < d; ++b)
+                    ((e = a.data[b]), c.push(e.buffer));
                   return c;
                 }.call(this, [])),
                 self.postMessage(a, f))
@@ -84,22 +90,27 @@
       ((c.pageSize = 4096), (c.charMap = {}));
       for (var d = 0; d < 256; d++) c.charMap[d] = String.fromCharCode(d);
       ((c.prototype.newPage = function () {
-        ((this.pages[++this.page] = new Uint8Array(c.pageSize)), (this.cursor = 0));
+        ((this.pages[++this.page] = new Uint8Array(c.pageSize)),
+          (this.cursor = 0));
       }),
         (c.prototype.getData = function () {
           var d = '';
           for (var a = 0; a < this.pages.length; a++)
-            for (var b = 0; b < c.pageSize; b++) d += c.charMap[this.pages[a][b]];
+            for (var b = 0; b < c.pageSize; b++)
+              d += c.charMap[this.pages[a][b]];
           return d;
         }),
         (c.prototype.writeByte = function (a) {
-          (this.cursor >= c.pageSize && this.newPage(), (this.pages[this.page][this.cursor++] = a));
+          (this.cursor >= c.pageSize && this.newPage(),
+            (this.pages[this.page][this.cursor++] = a));
         }),
         (c.prototype.writeUTFBytes = function (b) {
-          for (var c = b.length, a = 0; a < c; a++) this.writeByte(b.charCodeAt(a));
+          for (var c = b.length, a = 0; a < c; a++)
+            this.writeByte(b.charCodeAt(a));
         }),
         (c.prototype.writeBytes = function (b, d, e) {
-          for (var c = e || b.length, a = d || 0; a < c; a++) this.writeByte(b[a]);
+          for (var c = e || b.length, a = d || 0; a < c; a++)
+            this.writeByte(b[a]);
         }),
         (b.prototype.setDelay = function (a) {
           this.delay = Math.round(a / 10);
@@ -120,7 +131,10 @@
           ((this.image = a),
             this.getImagePixels(),
             this.analyzePixels(),
-            this.firstFrame && (this.writeLSD(), this.writePalette(), this.repeat >= 0 && this.writeNetscapeExt()),
+            this.firstFrame &&
+              (this.writeLSD(),
+              this.writePalette(),
+              this.repeat >= 0 && this.writeNetscapeExt()),
             this.writeGraphicCtrlExt(),
             this.writeImageDesc(),
             this.firstFrame || this.writePalette(),
@@ -144,13 +158,18 @@
           (a.buildColormap(), (this.colorTab = a.getColormap()));
           var b = 0;
           for (var c = 0; c < d; c++) {
-            var e = a.lookupRGB(this.pixels[b++] & 255, this.pixels[b++] & 255, this.pixels[b++] & 255);
+            var e = a.lookupRGB(
+              this.pixels[b++] & 255,
+              this.pixels[b++] & 255,
+              this.pixels[b++] & 255,
+            );
             ((this.usedEntry[e] = !0), (this.indexedPixels[c] = e));
           }
           ((this.pixels = null),
             (this.colorDepth = 8),
             (this.palSize = 7),
-            this.transparent !== null && (this.transIndex = this.findClosest(this.transparent)));
+            this.transparent !== null &&
+              (this.transIndex = this.findClosest(this.transparent)));
         }),
         (b.prototype.findClosest = function (e) {
           if (this.colorTab === null) return -1;
@@ -179,11 +198,15 @@
           for (var d = 0; d < g; d++)
             for (var e = 0; e < a; e++) {
               var f = d * a * 4 + e * 4;
-              ((this.pixels[c++] = b[f]), (this.pixels[c++] = b[f + 1]), (this.pixels[c++] = b[f + 2]));
+              ((this.pixels[c++] = b[f]),
+                (this.pixels[c++] = b[f + 1]),
+                (this.pixels[c++] = b[f + 2]));
             }
         }),
         (b.prototype.writeGraphicCtrlExt = function () {
-          (this.out.writeByte(33), this.out.writeByte(249), this.out.writeByte(4));
+          (this.out.writeByte(33),
+            this.out.writeByte(249),
+            this.out.writeByte(4));
           var b, a;
           (this.transparent === null ? ((b = 0), (a = 0)) : ((b = 1), (a = 2)),
             this.dispose >= 0 && (a = dispose & 7),
@@ -199,7 +222,9 @@
             this.writeShort(0),
             this.writeShort(this.width),
             this.writeShort(this.height),
-            this.firstFrame ? this.out.writeByte(0) : this.out.writeByte(128 | this.palSize));
+            this.firstFrame
+              ? this.out.writeByte(0)
+              : this.out.writeByte(128 | this.palSize));
         }),
         (b.prototype.writeLSD = function () {
           (this.writeShort(this.width),
@@ -227,7 +252,12 @@
           (this.out.writeByte(a & 255), this.out.writeByte((a >> 8) & 255));
         }),
         (b.prototype.writePixels = function () {
-          var a = new g(this.width, this.height, this.indexedPixels, this.colorDepth);
+          var a = new g(
+            this.width,
+            this.height,
+            this.indexedPixels,
+            this.colorDepth,
+          );
           a.encode(this.out);
         }),
         (b.prototype.stream = function () {
@@ -288,7 +318,11 @@
         }
 
         function z(a) {
-          (a.writeByte(s), (remaining = y * D), (curPixel = 0), A(s + 1, a), a.writeByte(0));
+          (a.writeByte(s),
+            (remaining = y * D),
+            (curPixel = 0),
+            A(s + 1, a),
+            a.writeByte(0));
         }
 
         function t(a) {
@@ -311,7 +345,9 @@
           while (e >= 8) (w(g & 255, c), (g >>= 8), (e -= 8));
           if (
             ((k > m || j) &&
-              (j ? ((m = p((n_bits = q))), (j = !1)) : (++n_bits, n_bits == b ? (m = 1 << b) : (m = p(n_bits)))),
+              (j
+                ? ((m = p((n_bits = q))), (j = !1))
+                : (++n_bits, n_bits == b ? (m = 1 << b) : (m = p(n_bits)))),
             a == o)
           ) {
             while (e > 0) (w(g & 255, c), (g >>= 8), (e -= 8));
@@ -336,7 +372,10 @@
       var c = -1,
         b = 12,
         a = 5003,
-        d = [0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535];
+        d = [
+          0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383,
+          32767, 65535,
+        ];
       e.exports = f;
     }),
     a.define('/TypedNeuQuant.js', function (A, F, E, D) {
@@ -349,11 +388,15 @@
             (z = new Int32Array(a >> 3)));
           var c, d;
           for (c = 0; c < a; c++)
-            ((d = (c << (b + 8)) / a), (o[c] = new Float64Array([d, d, d, 0])), (y[c] = e / a), (t[c] = 0));
+            ((d = (c << (b + 8)) / a),
+              (o[c] = new Float64Array([d, d, d, 0])),
+              (y[c] = e / a),
+              (t[c] = 0));
         }
 
         function J() {
-          for (var c = 0; c < a; c++) ((o[c][0] >>= b), (o[c][1] >>= b), (o[c][2] >>= b), (o[c][3] = c));
+          for (var c = 0; c < a; c++)
+            ((o[c][0] >>= b), (o[c][1] >>= b), (o[c][2] >>= b), (o[c][3] = c));
         }
 
         function K(b, a, c, e, f) {
@@ -396,7 +439,8 @@
             l;
           for (c = 0; c < a; c++)
             ((j = o[c]),
-              (e = Math.abs(j[0] - p) + Math.abs(j[1] - s) + Math.abs(j[2] - q)),
+              (e =
+                Math.abs(j[0] - p) + Math.abs(j[1] - s) + Math.abs(j[2] - q)),
               e < h && ((h = e), (d = c)),
               (n = e - (t[c] >> (i - b))),
               n < k && ((k = n), (m = c)),
@@ -416,7 +460,8 @@
             f = 0,
             i = 0;
           for (d = 0; d < a; d++) {
-            for (e = o[d], h = d, g = e[1], b = d + 1; b < a; b++) ((c = o[b]), c[1] < g && ((h = b), (g = c[1])));
+            for (e = o[d], h = d, g = e[1], b = d + 1; b < a; b++)
+              ((c = o[b]), c[1] < g && ((h = b), (g = c[1])));
             if (
               ((c = o[h]),
               d != h &&
@@ -460,7 +505,11 @@
                   (b = d[0] - j),
                   b < 0 && (b = -b),
                   (c += b),
-                  c < e && ((b = d[2] - k), b < 0 && (b = -b), (c += b), c < e && ((e = c), (h = d[3]))))),
+                  c < e &&
+                    ((b = d[2] - k),
+                    b < 0 && (b = -b),
+                    (c += b),
+                    c < e && ((e = c), (h = d[3]))))),
               g >= 0 &&
                 ((d = o[g]),
                 (c = i - d[1]),
@@ -471,7 +520,11 @@
                     (b = d[0] - j),
                     b < 0 && (b = -b),
                     (c += b),
-                    c < e && ((b = d[2] - k), b < 0 && (b = -b), (c += b), c < e && ((e = c), (h = d[3]))))));
+                    c < e &&
+                      ((b = d[2] - k),
+                      b < 0 && (b = -b),
+                      (c += b),
+                      c < e && ((e = c), (h = d[3]))))));
           return h;
         }
 
@@ -484,7 +537,8 @@
             n = d,
             o = u,
             a = o >> h;
-          for (a <= 1 && (a = 0), c = 0; c < a; c++) z[c] = n * (((a * a - c * c) * m) / (a * a));
+          for (a <= 1 && (a = 0), c = 0; c < a; c++)
+            z[c] = n * (((a * a - c * c) * m) / (a * a));
           var i;
           f < s
             ? ((B = 1), (i = 3))
@@ -515,7 +569,11 @@
               q === 0 && (q = 1),
               c % q === 0)
             )
-              for (n -= n / D, o -= o / v, a = o >> h, a <= 1 && (a = 0), e = 0; e < a; e++)
+              for (
+                n -= n / D, o -= o / v, a = o >> h, a <= 1 && (a = 0), e = 0;
+                e < a;
+                e++
+              )
                 z[e] = n * (((a * a - e * e) * m) / (a * a));
         }
 
@@ -535,7 +593,9 @@
           return b;
         }
         var o, q, t, y, z;
-        ((this.buildColormap = G), (this.getColormap = H), (this.lookupRGB = E));
+        ((this.buildColormap = G),
+          (this.getColormap = H),
+          (this.lookupRGB = E));
       }
       var w = 100,
         a = 256,

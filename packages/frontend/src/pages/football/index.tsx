@@ -4,12 +4,45 @@ import { Navbar } from '@editor/components/shared/Navbar';
 import { useState } from 'react';
 
 const formations: Record<string, string[][]> = {
-  '3-5-2': [['ST', 'ST'], ['LM', 'CM', 'CM', 'CM', 'RM'], ['LCB', 'CB', 'RCB'], ['GK']],
-  '4-3-3': [['LW', 'ST', 'RW'], ['AM', 'DM', 'CM'], ['LB', 'LCB', 'RCB', 'RB'], ['GK']],
-  '4-2-3-1': [['ST'], ['LW', 'AM', 'RW'], ['DM', 'DM'], ['LB', 'LCB', 'RCB', 'RB'], ['GK']],
-  '4-1-2-1-2': [['ST', 'ST'], ['AM'], ['CM', 'CM'], ['DM'], ['LB', 'LCB', 'RCB', 'RB'], ['GK']],
-  '5-4-1': [['ST'], ['LM', 'CM', 'CM', 'RM'], ['LWB', 'LCB', 'CB', 'RCB', 'RWB'], ['GK']],
-  '5-3-2': [['ST', 'ST'], ['CM', 'CM', 'CM'], ['LWB', 'LCB', 'CB', 'RCB', 'RWB'], ['GK']],
+  '3-5-2': [
+    ['ST', 'ST'],
+    ['LM', 'CM', 'CM', 'CM', 'RM'],
+    ['LCB', 'CB', 'RCB'],
+    ['GK'],
+  ],
+  '4-3-3': [
+    ['LW', 'ST', 'RW'],
+    ['AM', 'DM', 'CM'],
+    ['LB', 'LCB', 'RCB', 'RB'],
+    ['GK'],
+  ],
+  '4-2-3-1': [
+    ['ST'],
+    ['LW', 'AM', 'RW'],
+    ['DM', 'DM'],
+    ['LB', 'LCB', 'RCB', 'RB'],
+    ['GK'],
+  ],
+  '4-1-2-1-2': [
+    ['ST', 'ST'],
+    ['AM'],
+    ['CM', 'CM'],
+    ['DM'],
+    ['LB', 'LCB', 'RCB', 'RB'],
+    ['GK'],
+  ],
+  '5-4-1': [
+    ['ST'],
+    ['LM', 'CM', 'CM', 'RM'],
+    ['LWB', 'LCB', 'CB', 'RCB', 'RWB'],
+    ['GK'],
+  ],
+  '5-3-2': [
+    ['ST', 'ST'],
+    ['CM', 'CM', 'CM'],
+    ['LWB', 'LCB', 'CB', 'RCB', 'RWB'],
+    ['GK'],
+  ],
 };
 
 const players: Record<string, string[]> = {
@@ -27,7 +60,10 @@ const players: Record<string, string[]> = {
 };
 
 const FootballPage = () => {
-  const [{ key = '', formation = [] }, setFormation] = useState<{ key: string; formation: string[][] }>({
+  const [{ key = '', formation = [] }, setFormation] = useState<{
+    key: string;
+    formation: string[][];
+  }>({
     key: '4-3-3',
     formation: formations['4-3-3'],
   });
@@ -43,7 +79,9 @@ const FootballPage = () => {
             value={key}
             onChange={(event) => {
               const newKey = event.target.value;
-              const newFormation = JSON.parse(JSON.stringify(formations[newKey]));
+              const newFormation = JSON.parse(
+                JSON.stringify(formations[newKey]),
+              );
               setFormation({ key: newKey, formation: newFormation });
             }}
             className="w-full">
@@ -69,7 +107,10 @@ const FootballPage = () => {
                           </Glass.Card>
                           <div className="flex flex-col items-center justify-center gap-y-2 text-xs">
                             {(players[position] ?? []).map((player: string) => (
-                              <div key={player} title={player} className="w-36 truncate text-center">
+                              <div
+                                key={player}
+                                title={player}
+                                className="w-36 truncate text-center">
                                 {player}
                               </div>
                             ))}

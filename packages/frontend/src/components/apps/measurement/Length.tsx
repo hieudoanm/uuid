@@ -29,7 +29,9 @@ const convertRates =
       toUnit: 'cm',
     },
   ): number => {
-    return parseFloat(((fromAmount * lengthRates[toUnit]) / lengthRates[fromUnit]).toFixed(2));
+    return parseFloat(
+      ((fromAmount * lengthRates[toUnit]) / lengthRates[fromUnit]).toFixed(2),
+    );
   };
 
 export const Length: FC = () => {
@@ -70,7 +72,9 @@ export const Length: FC = () => {
         { type: 'kilometer', value: kilometer },
       ].map(({ type, value }) => {
         return (
-          <div key={type} className="flex items-center justify-center gap-x-2 px-4 py-2">
+          <div
+            key={type}
+            className="flex items-center justify-center gap-x-2 px-4 py-2">
             <span className="capitalize">{type}</span>
             <input
               type="text"
@@ -86,23 +90,43 @@ export const Length: FC = () => {
                   yard:
                     type === 'yard'
                       ? newAmount
-                      : convertRates(lengthRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'yard' }),
+                      : convertRates(lengthRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'yard',
+                        }),
                   foot:
                     type === 'foot'
                       ? newAmount
-                      : convertRates(lengthRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'foot' }),
+                      : convertRates(lengthRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'foot',
+                        }),
                   inch:
                     type === 'inch'
                       ? newAmount
-                      : convertRates(lengthRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'inch' }),
+                      : convertRates(lengthRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'inch',
+                        }),
                   kilometer:
                     type === 'kilometer'
                       ? newAmount
-                      : convertRates(lengthRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'kilometer' }),
+                      : convertRates(lengthRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'kilometer',
+                        }),
                   meter:
                     type === 'meter'
                       ? newAmount
-                      : convertRates(lengthRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'meter' }),
+                      : convertRates(lengthRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'meter',
+                        }),
                   centimeter:
                     type === 'centimeter'
                       ? newAmount

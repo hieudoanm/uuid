@@ -7,7 +7,12 @@ import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 
 const timezones = [
-  { label: 'Los Angeles', tz: 'America/Los_Angeles', lat: 34.0522, lon: -118.2437 },
+  {
+    label: 'Los Angeles',
+    tz: 'America/Los_Angeles',
+    lat: 34.0522,
+    lon: -118.2437,
+  },
   { label: 'Dallas', tz: 'America/Chicago', lat: 32.7767, lon: -96.797 },
   { label: 'New York', tz: 'America/New_York', lat: 40.7128, lon: -74.006 },
   { label: 'London', tz: 'Europe/London', lat: 51.5072, lon: -0.1276 },
@@ -65,7 +70,9 @@ const getTimeInZone = (tz: string) =>
   }).format(new Date());
 
 const TimeZonesPage: NextPage = () => {
-  const [times, setTimes] = useState(() => timezones.map(({ tz }) => getTimeInZone(tz)));
+  const [times, setTimes] = useState(() =>
+    timezones.map(({ tz }) => getTimeInZone(tz)),
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -95,7 +102,9 @@ const TimeZonesPage: NextPage = () => {
         <Navbar />
         <Divider />
         <main className="container mx-auto flex grow flex-col space-y-8 p-8">
-          <h1 className="text-center text-3xl font-bold tracking-tight md:text-4xl">World Clock & Weather</h1>
+          <h1 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
+            World Clock & Weather
+          </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
             {timezones.map(({ label }, index) => {
               const weather = weatherQueries[index].data;
@@ -107,21 +116,28 @@ const TimeZonesPage: NextPage = () => {
                       <h2 className="text-lg font-semibold tracking-wide whitespace-nowrap text-neutral-200">
                         {label}
                       </h2>
-                      <p className="mt-1 font-mono text-xl font-medium tabular-nums">{times[index]}</p>
+                      <p className="mt-1 font-mono text-xl font-medium tabular-nums">
+                        {times[index]}
+                      </p>
                     </div>
                     {/* Right: Weather */}
                     <div className="mt-4 text-right text-sm sm:mt-0">
                       {weather ? (
                         <>
                           <p className="text-neutral-300">
-                            🌡️ <span className="font-medium">{weather.temperature_2m}°C</span>
+                            🌡️{' '}
+                            <span className="font-medium">
+                              {weather.temperature_2m}°C
+                            </span>
                           </p>
                           <p className="whitespace-nowrap text-neutral-400">
                             {weatherCodeToText(weather.weather_code)}
                           </p>
                         </>
                       ) : (
-                        <p className="text-neutral-500 italic">Loading weather...</p>
+                        <p className="text-neutral-500 italic">
+                          Loading weather...
+                        </p>
                       )}
                     </div>
                   </div>

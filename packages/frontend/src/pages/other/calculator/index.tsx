@@ -29,7 +29,9 @@ enum Measurement {
 }
 
 const AnglePage: NextPage = () => {
-  const [{ measurement }, setState] = useState<{ measurement: Measurement }>({ measurement: Measurement.Angle });
+  const [{ measurement }, setState] = useState<{ measurement: Measurement }>({
+    measurement: Measurement.Angle,
+  });
 
   return (
     <div className="h-screen w-screen">
@@ -44,7 +46,10 @@ const AnglePage: NextPage = () => {
               className="w-full"
               value={measurement}
               onChange={(event: ChangeEvent<HTMLSelectElement>) => {
-                setState((previous) => ({ ...previous, measurement: event.target.value as Measurement }));
+                setState((previous) => ({
+                  ...previous,
+                  measurement: event.target.value as Measurement,
+                }));
               }}>
               <option value={Measurement.Angle}>Angle</option>
               <option value={Measurement.Base}>Base</option>

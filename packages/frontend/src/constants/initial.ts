@@ -32,7 +32,8 @@ export const INITIAL_MANIFEST_EXTENSION = {
       description: "Send a 'toggle-feature' event",
     },
   },
-  content_security_policy: "script-src 'self' https://example.com; object-src 'self'",
+  content_security_policy:
+    "script-src 'self' https://example.com; object-src 'self'",
   content_scripts: [
     {
       exclude_matches: ['*://developer.mozilla.org/*'],

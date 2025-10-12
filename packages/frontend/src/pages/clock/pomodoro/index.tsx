@@ -54,10 +54,16 @@ const PomodoroPage: NextPage = () => {
       <div className="grow">
         <div className="flex h-full flex-col items-center justify-center bg-neutral-900 px-4 text-center text-white">
           <h1 className="mb-6 text-4xl font-bold">Pomodoro Timer</h1>
-          <p className="mb-2 text-lg text-neutral-400">{isBreak ? 'Break Time' : 'Focus Time'}</p>
-          <div className="mb-6 font-mono text-6xl tabular-nums">{formatTime(timeLeft)}</div>
+          <p className="mb-2 text-lg text-neutral-400">
+            {isBreak ? 'Break Time' : 'Focus Time'}
+          </p>
+          <div className="mb-6 font-mono text-6xl tabular-nums">
+            {formatTime(timeLeft)}
+          </div>
           <div className="flex gap-4">
-            <Glass.Button onClick={() => setIsRunning((r) => !r)}>{isRunning ? 'Pause' : 'Start'}</Glass.Button>
+            <Glass.Button onClick={() => setIsRunning((r) => !r)}>
+              {isRunning ? 'Pause' : 'Start'}
+            </Glass.Button>
             <Glass.Button onClick={handleReset}>Reset</Glass.Button>
           </div>
         </div>

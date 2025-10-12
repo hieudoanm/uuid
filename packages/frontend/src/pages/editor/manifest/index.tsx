@@ -2,12 +2,18 @@
 import { Divider } from '@editor/components/shared/Divider';
 import { Glass } from '@editor/components/shared/Glass';
 import { Navbar } from '@editor/components/shared/Navbar';
-import { INITIAL_MANIFEST_EXTENSION, INITIAL_MANIFEST_PWA } from '@editor/constants/initial';
+import {
+  INITIAL_MANIFEST_EXTENSION,
+  INITIAL_MANIFEST_PWA,
+} from '@editor/constants/initial';
 import { json, jsonParse } from '@editor/utils/json/json';
 import { ChangeEvent, useState } from 'react';
 
 const EditorPage = () => {
-  const [{ manifest = '', type = '' }, setState] = useState<{ manifest: string; type: 'extension' | 'pwa' }>({
+  const [{ manifest = '', type = '' }, setState] = useState<{
+    manifest: string;
+    type: 'extension' | 'pwa';
+  }>({
     manifest: json(INITIAL_MANIFEST_EXTENSION).format().beautify(),
     type: 'extension',
   });
@@ -22,24 +28,39 @@ const EditorPage = () => {
             <Glass.Button
               type="button"
               onClick={() => {
-                const newManifest = json(jsonParse(manifest, [])).format().beautify();
-                setState((previous) => ({ ...previous, manifest: newManifest }));
+                const newManifest = json(jsonParse(manifest, []))
+                  .format()
+                  .beautify();
+                setState((previous) => ({
+                  ...previous,
+                  manifest: newManifest,
+                }));
               }}>
               Beautify
             </Glass.Button>
             <Glass.Button
               type="button"
               onClick={() => {
-                const newManifest = json(jsonParse(manifest, [])).format().minify();
-                setState((previous) => ({ ...previous, manifest: newManifest }));
+                const newManifest = json(jsonParse(manifest, []))
+                  .format()
+                  .minify();
+                setState((previous) => ({
+                  ...previous,
+                  manifest: newManifest,
+                }));
               }}>
               Minify
             </Glass.Button>
             <Glass.Button
               type="button"
               onClick={() => {
-                const newManifest = json(jsonParse(manifest, [])).format().sort();
-                setState((previous) => ({ ...previous, manifest: newManifest }));
+                const newManifest = json(jsonParse(manifest, []))
+                  .format()
+                  .sort();
+                setState((previous) => ({
+                  ...previous,
+                  manifest: newManifest,
+                }));
               }}>
               Sort
             </Glass.Button>

@@ -17,7 +17,9 @@ export const GitHubLanguages: FC<{
   const { isPending, error, data } = useQuery({
     queryKey: [`repository-${repository}`],
     queryFn: async () => {
-      const { error, data } = await tryCatch(fetch(proxyUrl).then((response) => response.json()));
+      const { error, data } = await tryCatch(
+        fetch(proxyUrl).then((response) => response.json()),
+      );
       if (error) return {};
       return data;
     },
@@ -27,19 +29,24 @@ export const GitHubLanguages: FC<{
 
   if (error) return <p className="text-center">{error.message}</p>;
 
-  if (JSON.stringify(data) === '{}') return <p className="text-center">No Data</p>;
+  if (JSON.stringify(data) === '{}')
+    return <p className="text-center">No Data</p>;
 
   return (
-    <div ref={ref} className="mx-auto flex w-full flex-col overflow-hidden rounded-xl">
+    <div
+      ref={ref}
+      className="mx-auto flex w-full flex-col overflow-hidden rounded-xl">
       {Object.keys(data ?? {})
         .filter((languageKey: string) => {
           const language: GitHubLanguage =
-            (languages as Record<string, GitHubLanguage>)[languageKey] ?? ({} as GitHubLanguage);
+            (languages as Record<string, GitHubLanguage>)[languageKey] ??
+            ({} as GitHubLanguage);
           const { color = '' } = language;
           return color;
         })
         .map((languageKey: string) => {
-          const language: GitHubLanguage = (languages as Record<string, GitHubLanguage>)[languageKey] ?? {};
+          const language: GitHubLanguage =
+            (languages as Record<string, GitHubLanguage>)[languageKey] ?? {};
           const { color: bgColor = '' } = language;
           const backgroundColor = bgColor.toString();
           const color = getBrightness(backgroundColor) ? '#ffffff' : '#101828';

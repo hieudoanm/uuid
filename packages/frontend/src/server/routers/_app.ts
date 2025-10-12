@@ -61,8 +61,11 @@ export const appRouter = router({
         }),
       )
       .mutation(async (options): Promise<{ text: string }> => {
-        const { messages = [], model = GeminiModel.Gemini_2_5_Flash } = options.input;
-        const { data, error } = await tryCatch(generate({ messages, model: model as GeminiModel | OpenRouterModel }));
+        const { messages = [], model = GeminiModel.Gemini_2_5_Flash } =
+          options.input;
+        const { data, error } = await tryCatch(
+          generate({ messages, model: model as GeminiModel | OpenRouterModel }),
+        );
         if (error) {
           console.error('Error generating content:', error);
           return { text: 'An error occurred while generating content.' };
@@ -76,17 +79,21 @@ export const appRouter = router({
   },
   youtube: {
     transcript: {
-      summarise: procedure.input(z.object({ videoId: z.string().default('') })).mutation(async (options) => {
-        const { videoId } = options.input;
-        const { data, error } = await tryCatch(summariseTranscript({ videoId }));
-        if (error) {
-          return { summary: error.message };
-        }
-        if (!data) {
-          return { summary: 'No Summary.' };
-        }
-        return { summary: data.summary ?? 'No Summary.' };
-      }),
+      summarise: procedure
+        .input(z.object({ videoId: z.string().default('') }))
+        .mutation(async (options) => {
+          const { videoId } = options.input;
+          const { data, error } = await tryCatch(
+            summariseTranscript({ videoId }),
+          );
+          if (error) {
+            return { summary: error.message };
+          }
+          if (!data) {
+            return { summary: 'No Summary.' };
+          }
+          return { summary: data.summary ?? 'No Summary.' };
+        }),
     },
   },
 });

@@ -177,7 +177,12 @@
     "color": "#fa0f00",
     "tm_scope": "source.afm",
     "extensions": [".afm"],
-    "aliases": ["acfm", "adobe composite font metrics", "adobe multiple font metrics", "amfm"],
+    "aliases": [
+      "acfm",
+      "adobe composite font metrics",
+      "adobe multiple font metrics",
+      "amfm"
+    ],
     "ace_mode": "text",
     "language_id": 147198098
   },
@@ -999,7 +1004,18 @@
     "codemirror_mode": "clojure",
     "codemirror_mime_type": "text/x-clojure",
     "color": "#db5855",
-    "extensions": [".clj", ".bb", ".boot", ".cl2", ".cljc", ".cljs", ".cljs.hl", ".cljscm", ".cljx", ".hic"],
+    "extensions": [
+      ".clj",
+      ".bb",
+      ".boot",
+      ".cl2",
+      ".cljc",
+      ".cljs",
+      ".cljs.hl",
+      ".cljscm",
+      ".cljx",
+      ".hic"
+    ],
     "filenames": ["riemann.config"],
     "interpreters": ["bb"],
     "language_id": 62
@@ -1079,7 +1095,16 @@
     "tm_scope": "source.commonlisp",
     "color": "#3fb68b",
     "aliases": ["lisp"],
-    "extensions": [".lisp", ".asd", ".cl", ".l", ".lsp", ".ny", ".podsl", ".sexp"],
+    "extensions": [
+      ".lisp",
+      ".asd",
+      ".cl",
+      ".l",
+      ".lsp",
+      ".ny",
+      ".podsl",
+      ".sexp"
+    ],
     "interpreters": ["lisp", "sbcl", "ccl", "clisp", "ecl"],
     "ace_mode": "lisp",
     "codemirror_mode": "commonlisp",
@@ -1125,7 +1150,13 @@
   },
   "Cpp-ObjDump": {
     "type": "data",
-    "extensions": [".cppobjdump", ".c++-objdump", ".c++objdump", ".cpp-objdump", ".cxx-objdump"],
+    "extensions": [
+      ".cppobjdump",
+      ".c++-objdump",
+      ".c++objdump",
+      ".cpp-objdump",
+      ".cxx-objdump"
+    ],
     "tm_scope": "objdump.x86asm",
     "aliases": ["c++-objdump"],
     "ace_mode": "assembly_x86",
@@ -1685,8 +1716,22 @@
   "Erlang": {
     "type": "programming",
     "color": "#B83998",
-    "extensions": [".erl", ".app", ".app.src", ".es", ".escript", ".hrl", ".xrl", ".yrl"],
-    "filenames": ["Emakefile", "rebar.config", "rebar.config.lock", "rebar.lock"],
+    "extensions": [
+      ".erl",
+      ".app",
+      ".app.src",
+      ".es",
+      ".escript",
+      ".hrl",
+      ".xrl",
+      ".yrl"
+    ],
+    "filenames": [
+      "Emakefile",
+      "rebar.config",
+      "rebar.config.lock",
+      "rebar.lock"
+    ],
     "tm_scope": "source.erlang",
     "ace_mode": "erlang",
     "codemirror_mode": "erlang",
@@ -1828,7 +1873,16 @@
   "Forth": {
     "type": "programming",
     "color": "#341708",
-    "extensions": [".fth", ".4th", ".f", ".for", ".forth", ".fr", ".frt", ".fs"],
+    "extensions": [
+      ".fth",
+      ".4th",
+      ".f",
+      ".for",
+      ".forth",
+      ".fr",
+      ".frt",
+      ".fs"
+    ],
     "tm_scope": "source.forth",
     "ace_mode": "forth",
     "codemirror_mode": "forth",
@@ -2417,7 +2471,15 @@
     "codemirror_mime_type": "text/html",
     "color": "#e34c26",
     "aliases": ["xhtml"],
-    "extensions": [".html", ".hta", ".htm", ".html.hl", ".inc", ".xht", ".xhtml"],
+    "extensions": [
+      ".html",
+      ".hta",
+      ".htm",
+      ".html.hl",
+      ".inc",
+      ".xht",
+      ".xhtml"
+    ],
     "language_id": 146
   },
   "HTML+ECR": {
@@ -2629,7 +2691,17 @@
   "INI": {
     "type": "data",
     "color": "#d1dbe0",
-    "extensions": [".ini", ".cfg", ".cnf", ".dof", ".lektorproject", ".prefs", ".pro", ".properties", ".url"],
+    "extensions": [
+      ".ini",
+      ".cfg",
+      ".cnf",
+      ".dof",
+      ".lektorproject",
+      ".prefs",
+      ".pro",
+      ".properties",
+      ".url"
+    ],
     "filenames": [
       ".buckconfig",
       ".coveragerc",
@@ -3041,7 +3113,18 @@
       ".xsjslib"
     ],
     "filenames": ["Jakefile"],
-    "interpreters": ["chakra", "d8", "gjs", "js", "node", "nodejs", "qjs", "rhino", "v8", "v8-shell"],
+    "interpreters": [
+      "chakra",
+      "d8",
+      "gjs",
+      "js",
+      "node",
+      "nodejs",
+      "qjs",
+      "rhino",
+      "v8",
+      "v8-shell"
+    ],
     "language_id": 183
   },
   "JavaScript+ERB": {
@@ -3158,7 +3241,14 @@
     "aliases": ["Justfile"],
     "color": "#384d54",
     "tm_scope": "source.just",
-    "filenames": [".JUSTFILE", ".Justfile", ".justfile", "JUSTFILE", "Justfile", "justfile"],
+    "filenames": [
+      ".JUSTFILE",
+      ".Justfile",
+      ".justfile",
+      "JUSTFILE",
+      "Justfile",
+      "justfile"
+    ],
     "extensions": [".just"],
     "ace_mode": "text",
     "language_id": 128447695
@@ -3538,7 +3628,16 @@
     "codemirror_mode": "lua",
     "codemirror_mime_type": "text/x-lua",
     "color": "#000080",
-    "extensions": [".lua", ".fcgi", ".nse", ".p8", ".pd_lua", ".rbxs", ".rockspec", ".wlua"],
+    "extensions": [
+      ".lua",
+      ".fcgi",
+      ".nse",
+      ".p8",
+      ".pd_lua",
+      ".rbxs",
+      ".rockspec",
+      ".wlua"
+    ],
     "filenames": [".luacheckrc"],
     "interpreters": ["lua"],
     "language_id": 213
@@ -3747,7 +3846,17 @@
   "Mathematica": {
     "type": "programming",
     "color": "#dd1100",
-    "extensions": [".mathematica", ".cdf", ".m", ".ma", ".mt", ".nb", ".nbp", ".wl", ".wlt"],
+    "extensions": [
+      ".mathematica",
+      ".cdf",
+      ".m",
+      ".ma",
+      ".mt",
+      ".nb",
+      ".nbp",
+      ".wl",
+      ".wlt"
+    ],
     "aliases": ["mma", "wolfram", "wolfram language", "wolfram lang", "wl"],
     "tm_scope": "source.mathematica",
     "ace_mode": "text",
@@ -4590,7 +4699,18 @@
     "codemirror_mode": "php",
     "codemirror_mime_type": "application/x-httpd-php",
     "color": "#4F5D95",
-    "extensions": [".php", ".aw", ".ctp", ".fcgi", ".inc", ".php3", ".php4", ".php5", ".phps", ".phpt"],
+    "extensions": [
+      ".php",
+      ".aw",
+      ".ctp",
+      ".fcgi",
+      ".inc",
+      ".php3",
+      ".php4",
+      ".php5",
+      ".phps",
+      ".phpt"
+    ],
     "filenames": [".php", ".php_cs", ".php_cs.dist", "Phakefile"],
     "interpreters": ["php"],
     "aliases": ["inc"],
@@ -4729,8 +4849,26 @@
     "codemirror_mode": "perl",
     "codemirror_mime_type": "text/x-perl",
     "color": "#0298c3",
-    "extensions": [".pl", ".al", ".cgi", ".fcgi", ".perl", ".ph", ".plx", ".pm", ".psgi", ".t"],
-    "filenames": [".latexmkrc", "Makefile.PL", "Rexfile", "ack", "cpanfile", "latexmkrc"],
+    "extensions": [
+      ".pl",
+      ".al",
+      ".cgi",
+      ".fcgi",
+      ".perl",
+      ".ph",
+      ".plx",
+      ".pm",
+      ".psgi",
+      ".t"
+    ],
+    "filenames": [
+      ".latexmkrc",
+      "Makefile.PL",
+      "Rexfile",
+      "ack",
+      "cpanfile",
+      "latexmkrc"
+    ],
     "interpreters": ["cperl", "perl"],
     "aliases": ["cperl"],
     "language_id": 282
@@ -5187,7 +5325,14 @@
   },
   "REALbasic": {
     "type": "programming",
-    "extensions": [".rbbas", ".rbfrm", ".rbmnu", ".rbres", ".rbtbar", ".rbuistate"],
+    "extensions": [
+      ".rbbas",
+      ".rbfrm",
+      ".rbmnu",
+      ".rbres",
+      ".rbtbar",
+      ".rbuistate"
+    ],
     "tm_scope": "source.vbnet",
     "ace_mode": "text",
     "language_id": 310
@@ -5507,7 +5652,16 @@
     ],
     "filenames": ["eqnrc", "mmn", "mmt", "troffrc", "troffrc-end"],
     "tm_scope": "text.roff",
-    "aliases": ["groff", "man", "manpage", "man page", "man-page", "mdoc", "nroff", "troff"],
+    "aliases": [
+      "groff",
+      "man",
+      "manpage",
+      "man page",
+      "man-page",
+      "mdoc",
+      "nroff",
+      "troff"
+    ],
     "wrap": true,
     "ace_mode": "text",
     "codemirror_mode": "troff",
@@ -5663,7 +5817,13 @@
     "type": "data",
     "tm_scope": "source.sepolicy",
     "extensions": [".te"],
-    "filenames": ["file_contexts", "genfs_contexts", "initial_sids", "port_contexts", "security_classes"],
+    "filenames": [
+      "file_contexts",
+      "genfs_contexts",
+      "initial_sids",
+      "port_contexts",
+      "security_classes"
+    ],
     "ace_mode": "text",
     "language_id": 880010326
   },
@@ -5711,7 +5871,17 @@
     "ace_mode": "sql",
     "codemirror_mode": "sql",
     "codemirror_mime_type": "text/x-sql",
-    "extensions": [".sql", ".cql", ".ddl", ".inc", ".mysql", ".prc", ".tab", ".udf", ".viw"],
+    "extensions": [
+      ".sql",
+      ".cql",
+      ".ddl",
+      ".inc",
+      ".mysql",
+      ".prc",
+      ".tab",
+      ".udf",
+      ".viw"
+    ],
     "language_id": 333
   },
   "SQLPL": {
@@ -5738,7 +5908,14 @@
     "type": "data",
     "group": "INI",
     "aliases": ["sshconfig", "sshdconfig", "ssh_config", "sshd_config"],
-    "filenames": ["ssh-config", "ssh_config", "sshconfig", "sshconfig.snip", "sshd-config", "sshd_config"],
+    "filenames": [
+      "ssh-config",
+      "ssh_config",
+      "sshconfig",
+      "sshconfig.snip",
+      "sshd-config",
+      "sshd_config"
+    ],
     "ace_mode": "text",
     "tm_scope": "source.ssh-config",
     "language_id": 554920715
@@ -5848,7 +6025,15 @@
     "type": "programming",
     "color": "#1e4aec",
     "extensions": [".scm", ".sch", ".sld", ".sls", ".sps", ".ss"],
-    "interpreters": ["scheme", "guile", "bigloo", "chicken", "csi", "gosh", "r6rs"],
+    "interpreters": [
+      "scheme",
+      "guile",
+      "bigloo",
+      "chicken",
+      "csi",
+      "gosh",
+      "r6rs"
+    ],
     "tm_scope": "source.scheme",
     "ace_mode": "scheme",
     "codemirror_mode": "scheme",
@@ -5936,7 +6121,17 @@
       "zshenv",
       "zshrc"
     ],
-    "interpreters": ["ash", "bash", "dash", "ksh", "mksh", "pdksh", "rc", "sh", "zsh"],
+    "interpreters": [
+      "ash",
+      "bash",
+      "dash",
+      "ksh",
+      "mksh",
+      "pdksh",
+      "rc",
+      "sh",
+      "zsh"
+    ],
     "tm_scope": "source.shell",
     "ace_mode": "sh",
     "codemirror_mode": "shell",
@@ -6311,7 +6506,15 @@
     "type": "data",
     "color": "#9c4221",
     "extensions": [".toml"],
-    "filenames": ["Cargo.lock", "Cargo.toml.orig", "Gopkg.lock", "Pipfile", "pdm.lock", "poetry.lock", "uv.lock"],
+    "filenames": [
+      "Cargo.lock",
+      "Cargo.toml.orig",
+      "Gopkg.lock",
+      "Pipfile",
+      "pdm.lock",
+      "poetry.lock",
+      "uv.lock"
+    ],
     "tm_scope": "source.toml",
     "ace_mode": "toml",
     "codemirror_mode": "toml",
@@ -6631,7 +6834,15 @@
     "ace_mode": "yaml",
     "codemirror_mode": "yaml",
     "codemirror_mime_type": "text/x-yaml",
-    "extensions": [".anim", ".asset", ".mask", ".mat", ".meta", ".prefab", ".unity"],
+    "extensions": [
+      ".anim",
+      ".asset",
+      ".mask",
+      ".mat",
+      ".meta",
+      ".prefab",
+      ".unity"
+    ],
     "tm_scope": "source.yaml",
     "language_id": 380
   },
@@ -6716,7 +6927,16 @@
   "VHDL": {
     "type": "programming",
     "color": "#adb2cb",
-    "extensions": [".vhdl", ".vhd", ".vhf", ".vhi", ".vho", ".vhs", ".vht", ".vhw"],
+    "extensions": [
+      ".vhdl",
+      ".vhd",
+      ".vhf",
+      ".vhi",
+      ".vho",
+      ".vhs",
+      ".vht",
+      ".vhw"
+    ],
     "tm_scope": "source.vhdl",
     "ace_mode": "vhdl",
     "codemirror_mode": "vhdl",
@@ -6776,7 +6996,16 @@
     "tm_scope": "source.viml",
     "aliases": ["vim", "viml", "nvim", "vimscript"],
     "extensions": [".vim", ".vba", ".vimrc", ".vmb"],
-    "filenames": [".exrc", ".gvimrc", ".nvimrc", ".vimrc", "_vimrc", "gvimrc", "nvimrc", "vimrc"],
+    "filenames": [
+      ".exrc",
+      ".gvimrc",
+      ".nvimrc",
+      ".vimrc",
+      "_vimrc",
+      "gvimrc",
+      "nvimrc",
+      "vimrc"
+    ],
     "ace_mode": "text",
     "language_id": 388
   },
@@ -6805,7 +7034,13 @@
     "color": "#2c6353",
     "extensions": [".bas", ".cls", ".ctl", ".Dsr", ".frm"],
     "tm_scope": "source.vba",
-    "aliases": ["vb6", "vb 6", "visual basic 6", "visual basic classic", "classic visual basic"],
+    "aliases": [
+      "vb6",
+      "vb 6",
+      "visual basic 6",
+      "visual basic classic",
+      "classic visual basic"
+    ],
     "ace_mode": "text",
     "codemirror_mode": "vb",
     "codemirror_mime_type": "text/x-vb",
@@ -7185,7 +7420,15 @@
     "type": "data",
     "color": "#0060ac",
     "group": "XML",
-    "extensions": [".plist", ".stTheme", ".tmCommand", ".tmLanguage", ".tmPreferences", ".tmSnippet", ".tmTheme"],
+    "extensions": [
+      ".plist",
+      ".stTheme",
+      ".tmCommand",
+      ".tmLanguage",
+      ".tmPreferences",
+      ".tmSnippet",
+      ".tmTheme"
+    ],
     "tm_scope": "text.xml.plist",
     "ace_mode": "xml",
     "codemirror_mode": "xml",
@@ -7251,7 +7494,14 @@
   "Xojo": {
     "type": "programming",
     "color": "#81bd41",
-    "extensions": [".xojo_code", ".xojo_menu", ".xojo_report", ".xojo_script", ".xojo_toolbar", ".xojo_window"],
+    "extensions": [
+      ".xojo_code",
+      ".xojo_menu",
+      ".xojo_report",
+      ".xojo_script",
+      ".xojo_toolbar",
+      ".xojo_window"
+    ],
     "tm_scope": "source.xojo",
     "ace_mode": "text",
     "language_id": 405
@@ -7430,7 +7680,14 @@
   "dircolors": {
     "type": "data",
     "extensions": [".dircolors"],
-    "filenames": [".dir_colors", ".dircolors", "DIR_COLORS", "_dir_colors", "_dircolors", "dir_colors"],
+    "filenames": [
+      ".dir_colors",
+      ".dircolors",
+      "DIR_COLORS",
+      "_dir_colors",
+      "_dircolors",
+      "dir_colors"
+    ],
     "tm_scope": "source.dircolors",
     "ace_mode": "text",
     "language_id": 691605112

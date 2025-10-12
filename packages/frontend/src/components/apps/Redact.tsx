@@ -6,7 +6,8 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import { Navbar } from '@editor/components/shared/Navbar';
 import { Divider } from '../shared/Divider';
 import { Glass } from '../shared/Glass';
-const NODE_ENV: 'development' | 'production' | 'test' = process.env.NODE_ENV ?? 'development';
+const NODE_ENV: 'development' | 'production' | 'test' =
+  process.env.NODE_ENV ?? 'development';
 const BASE_PATH: string = NODE_ENV === 'development' ? '' : '/micro';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `${BASE_PATH}/workers/pdf.worker.min.js`;
@@ -15,7 +16,16 @@ type RedactionBox = { x: number; y: number; width: number; height: number };
 type FabricCanvas = fabric.Canvas;
 
 const Redact: FC = () => {
-  const [{ redactions = {}, redoStack = {}, file = null, numberOfPages = 0, scale = 1.5 }, setState] = useState<{
+  const [
+    {
+      redactions = {},
+      redoStack = {},
+      file = null,
+      numberOfPages = 0,
+      scale = 1.5,
+    },
+    setState,
+  ] = useState<{
     redactions: Record<number, RedactionBox[]>;
     redoStack: Record<number, RedactionBox[]>;
     file: File | null;
@@ -64,7 +74,10 @@ const Redact: FC = () => {
 
     const modifiedBytes: Uint8Array<ArrayBufferLike> = await pdfDoc.save();
     const arrayBuffer = modifiedBytes.slice().buffer;
-    saveAs(new Blob([arrayBuffer], { type: 'application/pdf' }), 'redacted.pdf');
+    saveAs(
+      new Blob([arrayBuffer], { type: 'application/pdf' }),
+      'redacted.pdf',
+    );
   };
 
   const initFabric = (el: HTMLCanvasElement | null, pageIndex: number) => {
@@ -131,7 +144,9 @@ const Redact: FC = () => {
   };
 
   const handleUndo = () => {
-    const pagesWithRedactions = Object.entries(redactions).filter(([, boxes]) => boxes.length > 0);
+    const pagesWithRedactions = Object.entries(redactions).filter(
+      ([, boxes]) => boxes.length > 0,
+    );
     if (pagesWithRedactions.length === 0) return;
 
     const [lastPageStr] = pagesWithRedactions[pagesWithRedactions.length - 1];
@@ -166,7 +181,9 @@ const Redact: FC = () => {
   };
 
   const handleRedo = () => {
-    const pagesWithRedo = Object.entries(redoStack).filter(([, boxes]) => boxes.length > 0);
+    const pagesWithRedo = Object.entries(redoStack).filter(
+      ([, boxes]) => boxes.length > 0,
+    );
     if (pagesWithRedo.length === 0) return;
 
     const [lastPageStr] = pagesWithRedo[pagesWithRedo.length - 1];
@@ -210,7 +227,12 @@ const Redact: FC = () => {
         <Glass.Button>
           <label className="cursor-pointer">
             <span>Upload PDF</span>
-            <input type="file" accept="application/pdf" onChange={handleFile} className="hidden" />
+            <input
+              type="file"
+              accept="application/pdf"
+              onChange={handleFile}
+              className="hidden"
+            />
           </label>
         </Glass.Button>
         {file && (
@@ -236,10 +258,20 @@ const Redact: FC = () => {
               <div className="w-full overflow-auto">
                 <Document
                   file={file}
-                  onLoadSuccess={({ numPages }) => setState((previous) => ({ ...previous, numberOfPages: numPages }))}>
+                  onLoadSuccess={({ numPages }) =>
+                    setState((previous) => ({
+                      ...previous,
+                      numberOfPages: numPages,
+                    }))
+                  }>
                   {Array.from({ length: numberOfPages }, (_, i) => (
                     <div key={i} className="relative">
-                      <Page pageNumber={i + 1} scale={scale} renderAnnotationLayer={false} renderTextLayer={false} />
+                      <Page
+                        pageNumber={i + 1}
+                        scale={scale}
+                        renderAnnotationLayer={false}
+                        renderTextLayer={false}
+                      />
                       <canvas
                         id={`canvas-${i}`}
                         ref={(el) => initFabric(el, i)}

@@ -15,7 +15,9 @@ value1,value2,value3,value4
 value1,value2,value3,value4`;
 
 const Table: FC<{ csv: string }> = ({ csv = '' }) => {
-  const data: Record<string, string>[] = csv2json(csv, { delimiter: DELIMITER });
+  const data: Record<string, string>[] = csv2json(csv, {
+    delimiter: DELIMITER,
+  });
 
   return (
     <div className="flex flex-col gap-y-4 md:gap-y-8">
@@ -41,7 +43,9 @@ const Table: FC<{ csv: string }> = ({ csv = '' }) => {
           <tbody>
             {data.map((item: Record<string, string>) => {
               return (
-                <tr key={`row-${JSON.stringify(item)}`} className="border-t border-neutral-800">
+                <tr
+                  key={`row-${JSON.stringify(item)}`}
+                  className="border-t border-neutral-800">
                   {Object.values(item).map((value: string) => {
                     return (
                       <td key={value}>
@@ -61,7 +65,8 @@ const Table: FC<{ csv: string }> = ({ csv = '' }) => {
         type="button"
         className="cursor-pointer rounded-lg bg-neutral-100 px-4 py-2 text-neutral-900"
         onClick={() => {
-          const csvHtmlTable: string = document.getElementById('csv-html-table')?.outerHTML ?? '';
+          const csvHtmlTable: string =
+            document.getElementById('csv-html-table')?.outerHTML ?? '';
           copy(csvHtmlTable);
         }}>
         Copy
@@ -71,15 +76,16 @@ const Table: FC<{ csv: string }> = ({ csv = '' }) => {
 };
 
 const CSVPage: NextPage = () => {
-  const [{ from = INITIAL_CSV, to = '', format = 'html' }, setState] = useState<{
-    from: string;
-    to: string;
-    format: Format;
-  }>({
-    from: INITIAL_CSV,
-    to: csv2sql(INITIAL_CSV),
-    format: Format.SQL,
-  });
+  const [{ from = INITIAL_CSV, to = '', format = 'html' }, setState] =
+    useState<{
+      from: string;
+      to: string;
+      format: Format;
+    }>({
+      from: INITIAL_CSV,
+      to: csv2sql(INITIAL_CSV),
+      format: Format.SQL,
+    });
 
   return (
     <div className="flex h-screen w-screen flex-col overflow-hidden">

@@ -2,9 +2,15 @@ import { tryCatch } from '@editor/utils/try-catch';
 
 const NODE_ENV = process.env.NODE_ENV ?? 'development';
 const BASE_URL =
-  NODE_ENV === 'development' ? 'http://localhost:10000' : 'https://youtube-transcript-summariser.onrender.com';
+  NODE_ENV === 'development'
+    ? 'http://localhost:10000'
+    : 'https://youtube-transcript-summariser.onrender.com';
 
-export const summariseTranscript = async ({ videoId }: { videoId: string }): Promise<{ summary: string }> => {
+export const summariseTranscript = async ({
+  videoId,
+}: {
+  videoId: string;
+}): Promise<{ summary: string }> => {
   const url = `${BASE_URL}/api/transcript/summarise`;
   const headers = { 'Content-Type': 'application/json' };
   const requestBody = { video_id: videoId };
@@ -17,7 +23,9 @@ export const summariseTranscript = async ({ videoId }: { videoId: string }): Pro
   if (!response) {
     return { summary: 'No Summary' };
   }
-  const { data, error: jsonError } = await tryCatch<{ summary: string }>(response.json());
+  const { data, error: jsonError } = await tryCatch<{ summary: string }>(
+    response.json(),
+  );
   if (jsonError) {
     return { summary: jsonError.message };
   }

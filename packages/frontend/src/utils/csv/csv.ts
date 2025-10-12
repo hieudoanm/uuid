@@ -11,7 +11,10 @@ const defaultOptions: Required<Options> = {
 /**
  * Converts a CSV string into an array of objects.
  */
-export const csv2json = <T extends Record<string, string>>(input: string, options: Options = defaultOptions): T[] => {
+export const csv2json = <T extends Record<string, string>>(
+  input: string,
+  options: Options = defaultOptions,
+): T[] => {
   const { delimiter, quote } = { ...defaultOptions, ...options };
 
   // Split into lines and trim trailing newlines
@@ -24,7 +27,9 @@ export const csv2json = <T extends Record<string, string>>(input: string, option
 
   // Extract header row
   const rawHeader = lines[0];
-  const headers = rawHeader.split(delimiter).map((h) => h.replace(new RegExp(quote, 'g'), '').trim());
+  const headers = rawHeader
+    .split(delimiter)
+    .map((h) => h.replace(new RegExp(quote, 'g'), '').trim());
 
   // Parse each row into an object
   return lines.slice(1).map((row) => {
@@ -55,11 +60,14 @@ export const csv2md = (csv: string): string => {
     Math.max(header.length, ...data.map((row) => (row[header] ?? '').length)),
   );
 
-  const formatRow = (values: string[]) => `| ${values.map((val, i) => val.padEnd(columnWidths[i], ' ')).join(' | ')} |`;
+  const formatRow = (values: string[]) =>
+    `| ${values.map((val, i) => val.padEnd(columnWidths[i], ' ')).join(' | ')} |`;
 
   const headerRow = formatRow(headers);
   const dividerRow = `| ${columnWidths.map((len) => '-'.repeat(len)).join(' | ')} |`;
-  const bodyRows = data.map((row) => formatRow(headers.map((h) => row[h] ?? '')));
+  const bodyRows = data.map((row) =>
+    formatRow(headers.map((h) => row[h] ?? '')),
+  );
 
   return [headerRow, dividerRow, ...bodyRows].join('\n');
 };

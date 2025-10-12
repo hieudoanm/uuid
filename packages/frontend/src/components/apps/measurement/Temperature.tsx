@@ -4,7 +4,11 @@ import { FC, useState } from 'react';
 type TemperatureUnit = 'celsius' | 'fahrenheit' | 'kelvin';
 
 // Conversion functions based on Celsius as the base
-const convertTemperature = (fromAmount: number, fromUnit: TemperatureUnit, toUnit: TemperatureUnit): number => {
+const convertTemperature = (
+  fromAmount: number,
+  fromUnit: TemperatureUnit,
+  toUnit: TemperatureUnit,
+): number => {
   let celsiusValue: number;
 
   // Convert the 'from' amount to Celsius
@@ -49,7 +53,9 @@ export const Temperature: FC = () => {
         { type: 'kelvin' as TemperatureUnit, value: kelvin },
       ].map(({ type, value }) => {
         return (
-          <div key={type} className="flex items-center justify-center gap-x-2 px-4 py-2">
+          <div
+            key={type}
+            className="flex items-center justify-center gap-x-2 px-4 py-2">
             <span className="capitalize">{type}</span>
             <input
               type="text"

@@ -15,11 +15,15 @@ export const Forex: FC = () => {
       <div className="scrollbar-none h-full divide-y divide-white/10 overflow-auto">
         {Object.entries(rates).map(([key, value]) => {
           return (
-            <div key={key} className="flex items-center justify-between gap-2 py-2">
+            <div
+              key={key}
+              className="flex items-center justify-between gap-2 py-2">
               <span className="">
                 {amount} {base} to {key}
               </span>
-              <span className="font-bold whitespace-nowrap">{formatCurrency(value, key)}</span>
+              <span className="font-bold whitespace-nowrap">
+                {formatCurrency(value, key)}
+              </span>
             </div>
           );
         })}

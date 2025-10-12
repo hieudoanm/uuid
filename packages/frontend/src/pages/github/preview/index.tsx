@@ -6,16 +6,22 @@ import { NextPage } from 'next';
 import { useState } from 'react';
 
 const PreviewPage: NextPage = () => {
-  const [{ name = 'Hieu Doan', description = 'GitHub Profile', repository = 'hieudoanm/hieudoanm' }, setState] =
-    useState<{
-      name: string;
-      description: string;
-      repository: string;
-    }>({
-      name: 'Hieu Doan',
-      description: 'GitHub Profile',
-      repository: 'hieudoanm/hieudoanm',
-    });
+  const [
+    {
+      name = 'Hieu Doan',
+      description = 'GitHub Profile',
+      repository = 'hieudoanm/hieudoanm',
+    },
+    setState,
+  ] = useState<{
+    name: string;
+    description: string;
+    repository: string;
+  }>({
+    name: 'Hieu Doan',
+    description: 'GitHub Profile',
+    repository: 'hieudoanm/hieudoanm',
+  });
 
   return (
     <div className="min-h-screen">
@@ -30,7 +36,10 @@ const PreviewPage: NextPage = () => {
               placeholder="Name"
               value={name}
               onChange={(event) => {
-                setState((previous) => ({ ...previous, name: event.target.value }));
+                setState((previous) => ({
+                  ...previous,
+                  name: event.target.value,
+                }));
               }}
             />
             <Glass.Input
@@ -39,7 +48,10 @@ const PreviewPage: NextPage = () => {
               placeholder="description"
               value={description}
               onChange={(event) => {
-                setState((previous) => ({ ...previous, description: event.target.value }));
+                setState((previous) => ({
+                  ...previous,
+                  description: event.target.value,
+                }));
               }}
             />
             <Glass.Input
@@ -48,11 +60,18 @@ const PreviewPage: NextPage = () => {
               placeholder="repository"
               value={repository}
               onChange={(event) => {
-                setState((previous) => ({ ...previous, repository: event.target.value }));
+                setState((previous) => ({
+                  ...previous,
+                  repository: event.target.value,
+                }));
               }}
             />
           </div>
-          <GitHubSocialPreview name={name} repository={repository} description={description} />
+          <GitHubSocialPreview
+            name={name}
+            repository={repository}
+            description={description}
+          />
         </div>
       </div>
     </div>

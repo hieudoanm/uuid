@@ -22,6 +22,8 @@ describe('json2csv', () => {
     const csv = `"id";"name"
 "1";"test1"
 "2";"test2"`;
-    expect(json2csv<Row>(json, { delimiter: ';', headers: ['id', 'name'] })).toEqual(csv);
+    expect(
+      json2csv<Row>(json, { delimiter: ';', headers: ['id', 'name'] }),
+    ).toEqual(csv);
   });
 });

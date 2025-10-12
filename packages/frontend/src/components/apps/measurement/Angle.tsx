@@ -3,7 +3,11 @@ import { useState } from 'react';
 
 type AngleUnit = 'degrees' | 'radians';
 
-const convertAngle = (fromAmount: number, fromUnit: AngleUnit, toUnit: AngleUnit): number => {
+const convertAngle = (
+  fromAmount: number,
+  fromUnit: AngleUnit,
+  toUnit: AngleUnit,
+): number => {
   let degreesValue: number;
 
   // Convert the 'from' amount to degrees as the base
@@ -41,7 +45,9 @@ export const Angle = () => {
         { type: 'radians' as AngleUnit, value: radians },
       ].map(({ type, value }) => {
         return (
-          <div key={type} className="flex items-center justify-center gap-x-2 px-4 py-2">
+          <div
+            key={type}
+            className="flex items-center justify-center gap-x-2 px-4 py-2">
             <span className="capitalize">{type}</span>
             <input
               type="text" // Use type="number" for numerical inputs

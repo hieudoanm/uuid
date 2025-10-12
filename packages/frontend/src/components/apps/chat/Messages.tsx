@@ -10,7 +10,12 @@ import { PiCopyDuotone } from 'react-icons/pi';
 
 type Role = 'ai' | 'user';
 
-export type Message = { role: Role; text: string; loading: boolean; model: GeminiModel | OpenRouterModel };
+export type Message = {
+  role: Role;
+  text: string;
+  loading: boolean;
+  model: GeminiModel | OpenRouterModel;
+};
 
 export const Messages: FC<{ messages: Message[] }> = ({ messages = [] }) => {
   useEffect(() => {
@@ -20,13 +25,18 @@ export const Messages: FC<{ messages: Message[] }> = ({ messages = [] }) => {
   if (!messages.length) {
     return (
       <div className="flex grow items-center justify-center">
-        <p className="text-neutral-500">No messages yet. Start the conversation with {MODELS.length} free AI Models</p>
+        <p className="text-neutral-500">
+          No messages yet. Start the conversation with {MODELS.length} free AI
+          Models
+        </p>
       </div>
     );
   }
 
   return (
-    <div id="messages" className="scrollbar-none flex grow flex-col space-y-4 overflow-y-auto">
+    <div
+      id="messages"
+      className="scrollbar-none flex grow flex-col space-y-4 overflow-y-auto">
       {messages.map(({ role, text, loading = false, model }, index) => {
         const key = `${role}-${index}`;
         if (role === 'user')
@@ -60,7 +70,10 @@ export const Messages: FC<{ messages: Message[] }> = ({ messages = [] }) => {
                 <div className="flex flex-col items-start space-y-1">
                   <div className="flex items-center space-x-1 text-neutral-500">
                     <p className="text-xs">{model}</p>
-                    <PiCopyDuotone className="cursor-pointer text-lg" onClick={() => copy(text)} />
+                    <PiCopyDuotone
+                      className="cursor-pointer text-lg"
+                      onClick={() => copy(text)}
+                    />
                   </div>
                   <div
                     className="prose prose-invert markdown-body bg-neutral-900!"

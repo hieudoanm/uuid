@@ -12,7 +12,10 @@ const rateLimitMap = new Map<string, RateLimitData>();
 // Type the middleware: it wraps a NextApiHandler
 const rateLimitMiddleware = (handler: NextApiHandler): NextApiHandler => {
   return (req: NextApiRequest, res: NextApiResponse) => {
-    const ip = ((req.headers['x-forwarded-for'] as string) || req.socket.remoteAddress) ?? '';
+    const ip =
+      ((req.headers['x-forwarded-for'] as string) ||
+        req.socket.remoteAddress) ??
+      '';
 
     const limit = 5; // requests per window
     const windowMs = 60 * 1000; // 1 minute

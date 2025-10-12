@@ -30,7 +30,15 @@ export const shortMonths: string[] = [
   'Dec',
 ];
 
-export const weekdays: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export const weekdays: string[] = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
 
 export const getOrdinalSuffix = (weekday: number): string => {
   const j = weekday % 10;

@@ -29,7 +29,9 @@ const convertRates =
       toUnit: 'cm',
     },
   ): number => {
-    return parseFloat(((fromAmount * weightRates[toUnit]) / weightRates[fromUnit]).toFixed(2));
+    return parseFloat(
+      ((fromAmount * weightRates[toUnit]) / weightRates[fromUnit]).toFixed(2),
+    );
   };
 
 export const Weight: FC = () => {
@@ -70,7 +72,9 @@ export const Weight: FC = () => {
         { type: 'milligram', value: milligram },
       ].map(({ type, value }) => {
         return (
-          <div key={type} className="flex items-center justify-center gap-x-2 px-4 py-2">
+          <div
+            key={type}
+            className="flex items-center justify-center gap-x-2 px-4 py-2">
             <span className="capitalize">{type}</span>
             <input
               type="text"
@@ -87,27 +91,51 @@ export const Weight: FC = () => {
                   ton:
                     type === 'ton'
                       ? newAmount
-                      : convertRates(weightRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'ton' }),
+                      : convertRates(weightRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'ton',
+                        }),
                   pound:
                     type === 'pound'
                       ? newAmount
-                      : convertRates(weightRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'pound' }),
+                      : convertRates(weightRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'pound',
+                        }),
                   ounce:
                     type === 'ounce'
                       ? newAmount
-                      : convertRates(weightRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'ounce' }),
+                      : convertRates(weightRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'ounce',
+                        }),
                   milligram:
                     type === 'milligram'
                       ? newAmount
-                      : convertRates(weightRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'milligram' }),
+                      : convertRates(weightRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'milligram',
+                        }),
                   gram:
                     type === 'gram'
                       ? newAmount
-                      : convertRates(weightRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'gram' }),
+                      : convertRates(weightRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'gram',
+                        }),
                   kilogram:
                     type === 'kilogram'
                       ? newAmount
-                      : convertRates(weightRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'kilogram' }),
+                      : convertRates(weightRates)({
+                          fromAmount: newAmount,
+                          fromUnit: type,
+                          toUnit: 'kilogram',
+                        }),
                 }));
               }}
             />

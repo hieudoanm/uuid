@@ -28,7 +28,8 @@ const content = {
         {
           id: 'pomodoro-timer',
           title: '⏳ Pomodoro Timer',
-          description: 'Boost focus and productivity with guided Pomodoro sessions.',
+          description:
+            'Boost focus and productivity with guided Pomodoro sessions.',
           href: '/clock/pomodoro',
         },
         {
@@ -59,7 +60,8 @@ const content = {
         {
           id: 'string-tools',
           title: '🔤 String Utilities',
-          description: 'Transform, decode, and clean text or encoded strings to braille/morse.',
+          description:
+            'Transform, decode, and clean text or encoded strings to braille/morse.',
           href: '/converter/strings',
         },
         // Dev
@@ -87,33 +89,38 @@ const content = {
         {
           id: 'pdf-redaction',
           title: '🛡️ PDF Redaction',
-          description: 'Redact sensitive content visually or permanently — all offline.',
+          description:
+            'Redact sensitive content visually or permanently — all offline.',
           href: '/editor/redact',
         },
         // GitHub
         {
           id: 'github-languages',
           title: '📊 GitHub Language Stats',
-          description: 'Visualize language distribution in any public GitHub repository.',
+          description:
+            'Visualize language distribution in any public GitHub repository.',
           href: '/github/languages',
         },
         {
           id: 'github-preview',
           title: '🖼️ GitHub Social Preview Generator',
-          description: 'Generate sleek Open Graph preview images for your GitHub repositories.',
+          description:
+            'Generate sleek Open Graph preview images for your GitHub repositories.',
           href: '/github/preview',
         },
         // Images
         {
           id: 'image-filter',
           title: '🎨 Image Filter',
-          description: 'Apply artistic filters and effects to enhance or stylize your photos.',
+          description:
+            'Apply artistic filters and effects to enhance or stylize your photos.',
           href: '/images/filter',
         },
         {
           id: 'image-ocr',
           title: '🔎 Image OCR',
-          description: 'Extract and copy text from images using built-in OCR technology.',
+          description:
+            'Extract and copy text from images using built-in OCR technology.',
           href: '/images/ocr',
         },
         {
@@ -140,7 +147,8 @@ const content = {
         {
           id: 'doi-tool',
           title: '🔗 DOI Reference Lookup',
-          description: 'Retrieve and format scholarly references from DOI links in APA style.',
+          description:
+            'Retrieve and format scholarly references from DOI links in APA style.',
           href: '/other/doi',
         },
         {

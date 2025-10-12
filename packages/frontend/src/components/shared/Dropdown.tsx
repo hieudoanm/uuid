@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
-export const Dropdown: FC<{ title: string; options: { id: string; href: string; label: string }[] }> = ({
-  title = '',
-  options = [],
-}) => {
+export const Dropdown: FC<{
+  title: string;
+  options: { id: string; href: string; label: string }[];
+}> = ({ title = '', options = [] }) => {
   return (
     <div className="group relative inline-block text-left">
-      <button type="button" className="inline-flex items-center justify-center gap-1 rounded-md">
+      <button
+        type="button"
+        className="inline-flex items-center justify-center gap-1 rounded-md">
         <span>{title}</span>
         <span className="text-xs">▾</span>
       </button>

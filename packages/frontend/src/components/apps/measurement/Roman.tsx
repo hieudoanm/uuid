@@ -5,14 +5,19 @@ import { FC, useState } from 'react';
 const INITIAL_NUMBER: number = 10;
 
 export const Roman: FC = () => {
-  const [{ arabicNumber = INITIAL_NUMBER.toString(), romanNumber = arabic2roman(INITIAL_NUMBER) }, setState] =
-    useState<{
-      arabicNumber: string;
-      romanNumber: string;
-    }>({
-      arabicNumber: INITIAL_NUMBER.toString(),
-      romanNumber: arabic2roman(INITIAL_NUMBER),
-    });
+  const [
+    {
+      arabicNumber = INITIAL_NUMBER.toString(),
+      romanNumber = arabic2roman(INITIAL_NUMBER),
+    },
+    setState,
+  ] = useState<{
+    arabicNumber: string;
+    romanNumber: string;
+  }>({
+    arabicNumber: INITIAL_NUMBER.toString(),
+    romanNumber: arabic2roman(INITIAL_NUMBER),
+  });
 
   return (
     <Glass.Card className="flex w-full max-w-sm flex-col gap-y-2 divide-y divide-white/10">
@@ -21,7 +26,9 @@ export const Roman: FC = () => {
         { type: 'roman', value: romanNumber },
       ].map(({ type, value }) => {
         return (
-          <div key={type} className="flex items-center justify-center gap-x-2 px-4 py-2">
+          <div
+            key={type}
+            className="flex items-center justify-center gap-x-2 px-4 py-2">
             <span className="capitalize">{type}</span>
             <input
               type="text"
@@ -30,8 +37,12 @@ export const Roman: FC = () => {
               value={value}
               onChange={(event) => {
                 const newValue = event.target.value;
-                const newArabicNumber: string = type === 'arabic' ? newValue : roman2arabic(newValue);
-                const newRomanNumber: string = type === 'roman' ? newValue : arabic2roman(parseInt(newValue, 10));
+                const newArabicNumber: string =
+                  type === 'arabic' ? newValue : roman2arabic(newValue);
+                const newRomanNumber: string =
+                  type === 'roman'
+                    ? newValue
+                    : arabic2roman(parseInt(newValue, 10));
                 setState((previous) => ({
                   ...previous,
                   arabicNumber: newArabicNumber,

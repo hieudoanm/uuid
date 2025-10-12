@@ -81,7 +81,10 @@ const validateModel = (model: GeminiModel | OpenRouterModel): boolean => {
  *                   description: The generated content.
  *                   example: 'GenAI, short for Generative AI, produces new content (text, images, code) by learning and replicating patterns from existing data.'
  */
-const handler = async (request: NextApiRequest, response: NextApiResponse<{ output: string }>) => {
+const handler = async (
+  request: NextApiRequest,
+  response: NextApiResponse<{ output: string }>,
+) => {
   const { method } = request;
   if (method !== 'POST') {
     response.setHeader('Allow', ['POST']);
@@ -94,7 +97,9 @@ const handler = async (request: NextApiRequest, response: NextApiResponse<{ outp
   const { data, error } = await tryCatch(generate({ messages, model }));
   if (error) {
     console.error('Error generating content:', error);
-    return response.status(500).json({ output: 'An error occurred while generating content.' });
+    return response
+      .status(500)
+      .json({ output: 'An error occurred while generating content.' });
   }
   if (!data) {
     return response.status(200).json({ output: 'No response generated.' });

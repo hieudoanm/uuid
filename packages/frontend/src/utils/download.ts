@@ -1,6 +1,14 @@
 const ONE_HOUR = 1000 * 60 * 60;
 
-const downloadFile = ({ content, format, filename }: { content: string; format: string; filename: string }) => {
+const downloadFile = ({
+  content,
+  format,
+  filename,
+}: {
+  content: string;
+  format: string;
+  filename: string;
+}) => {
   const encodedUri: string = encodeURI(content);
   const link: HTMLAnchorElement = document.createElement('a');
   link.setAttribute('href', encodedUri);
@@ -19,7 +27,15 @@ const downloadFile = ({ content, format, filename }: { content: string; format: 
   link.remove();
 };
 
-export const downloadText = ({ content, format, filename }: { content: string; format: string; filename: string }) => {
+export const downloadText = ({
+  content,
+  format,
+  filename,
+}: {
+  content: string;
+  format: string;
+  filename: string;
+}) => {
   const textContent: string = `data:text/${format};charset=utf-8,${content}`;
   downloadFile({ content: textContent, format, filename });
 };

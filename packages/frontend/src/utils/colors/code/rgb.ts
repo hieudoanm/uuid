@@ -3,7 +3,11 @@ export const component2hex = (code: number): string => {
   return hex.length === 1 ? `${hex}${hex}` : hex;
 };
 
-export const rgb2hex = (red: number = 0, green: number = 0, blue: number = 0): string => {
+export const rgb2hex = (
+  red: number = 0,
+  green: number = 0,
+  blue: number = 0,
+): string => {
   const min = 0;
   const max = 255;
   if (red > max) red = max;

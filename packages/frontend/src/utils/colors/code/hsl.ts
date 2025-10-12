@@ -11,7 +11,15 @@ export const hsl2hex = (h: number, s: number, l: number) => {
   return `#${f(0)}${f(8)}${f(4)}`;
 };
 
-export const hsl2rgb = ({ h, s, l }: { h: number; s: number; l: number }): { r: number; g: number; b: number } => {
+export const hsl2rgb = ({
+  h,
+  s,
+  l,
+}: {
+  h: number;
+  s: number;
+  l: number;
+}): { r: number; g: number; b: number } => {
   s /= 100;
   l /= 100;
 
@@ -56,7 +64,11 @@ export const hsl2rgb = ({ h, s, l }: { h: number; s: number; l: number }): { r: 
   };
 };
 
-export const hsl2cmyk = (h: number, s: number, l: number): { c: number; m: number; y: number; k: number } => {
+export const hsl2cmyk = (
+  h: number,
+  s: number,
+  l: number,
+): { c: number; m: number; y: number; k: number } => {
   // Step 1: Convert HSL to RGB
   s /= 100;
   l /= 100;

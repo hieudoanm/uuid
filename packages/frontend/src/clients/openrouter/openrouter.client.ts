@@ -21,10 +21,16 @@ export const complete = async ({
   messages: { role: OpenRouterRole; content: string }[];
   model: OpenRouterModel;
 }) => {
-  const { data, error } = await tryCatch(openai.chat.completions.create({ model, messages }, { timeout: 60000 })); // 60 seconds timeout
+  const { data, error } = await tryCatch(
+    openai.chat.completions.create({ model, messages }, { timeout: 60000 }),
+  ); // 60 seconds timeout
   if (error) {
     console.error('Error in OpenRouter completion:', error);
-    return { choices: [{ message: { content: 'An error occurred while generating content.' } }] };
+    return {
+      choices: [
+        { message: { content: 'An error occurred while generating content.' } },
+      ],
+    };
   }
   return data;
 };

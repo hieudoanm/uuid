@@ -1,4 +1,8 @@
-import { getId, getWork, Reference } from '@editor/clients/crossref/crossref.client';
+import {
+  getId,
+  getWork,
+  Reference,
+} from '@editor/clients/crossref/crossref.client';
 import { Divider } from '@editor/components/shared/Divider';
 import { Glass } from '@editor/components/shared/Glass';
 import { Navbar } from '@editor/components/shared/Navbar';
@@ -16,7 +20,8 @@ const APA: FC<{ reference: Reference }> = ({ reference }) => {
 
   return (
     <span>
-      {authorsAPA} ({reference.year}). {reference.title}. <i>{reference.journal}</i>. {journalPart}.{' '}
+      {authorsAPA} ({reference.year}). {reference.title}.{' '}
+      <i>{reference.journal}</i>. {journalPart}.{' '}
       <a href={reference.url} target="_blank" rel="noopener noreferrer">
         {reference.url}
       </a>
@@ -25,12 +30,22 @@ const APA: FC<{ reference: Reference }> = ({ reference }) => {
 };
 
 const DOIPage: NextPage = () => {
-  const [{ loading = false, doi = 'https://doi.org/10.1016/j.smrv.2009.04.001', references = [] }, setState] =
-    useState<{
-      loading: boolean;
-      doi: string;
-      references: Reference[];
-    }>({ loading: false, doi: 'https://doi.org/10.1016/j.smrv.2009.04.001', references: [] });
+  const [
+    {
+      loading = false,
+      doi = 'https://doi.org/10.1016/j.smrv.2009.04.001',
+      references = [],
+    },
+    setState,
+  ] = useState<{
+    loading: boolean;
+    doi: string;
+    references: Reference[];
+  }>({
+    loading: false,
+    doi: 'https://doi.org/10.1016/j.smrv.2009.04.001',
+    references: [],
+  });
 
   const [activeTab, setActiveTab] = useState<'table' | 'apa'>('table');
 
@@ -78,7 +93,9 @@ const DOIPage: NextPage = () => {
       <Navbar />
       <Divider />
       <div className="container mx-auto flex flex-col gap-y-8 p-8">
-        <form onSubmit={onSubmit} className="flex items-center gap-x-4 md:gap-x-8">
+        <form
+          onSubmit={onSubmit}
+          className="flex items-center gap-x-4 md:gap-x-8">
           <Glass.Input
             id="doi"
             name="doi"
@@ -86,7 +103,10 @@ const DOIPage: NextPage = () => {
             className="grow"
             value={doi}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              setState((previous) => ({ ...previous, doi: event.target.value }));
+              setState((previous) => ({
+                ...previous,
+                doi: event.target.value,
+              }));
             }}
             required
           />
@@ -98,10 +118,16 @@ const DOIPage: NextPage = () => {
         {/* Tabs */}
         {references.length > 0 && (
           <div className="flex gap-x-4">
-            <Glass.Button type="button" className="w-full" onClick={() => setActiveTab('table')}>
+            <Glass.Button
+              type="button"
+              className="w-full"
+              onClick={() => setActiveTab('table')}>
               Table
             </Glass.Button>
-            <Glass.Button type="button" className="w-full" onClick={() => setActiveTab('apa')}>
+            <Glass.Button
+              type="button"
+              className="w-full"
+              onClick={() => setActiveTab('apa')}>
               APA
             </Glass.Button>
           </div>
@@ -117,14 +143,19 @@ const DOIPage: NextPage = () => {
                   <th className="px-4 py-2 text-left">Year</th>
                   <th className="px-4 py-2 text-left">Title</th>
                   <th className="px-4 py-2 text-left">Journal</th>
-                  <th className="px-4 py-2 text-left">Volume - Issue - Pages</th>
+                  <th className="px-4 py-2 text-left">
+                    Volume - Issue - Pages
+                  </th>
                   <th className="px-4 py-2 text-left">Link</th>
                   <th className="px-4 py-2 text-left">
                     <button
                       type="button"
                       className="cursor-pointer text-red-400 hover:underline"
                       onClick={() => {
-                        setState((previous) => ({ ...previous, references: [] }));
+                        setState((previous) => ({
+                          ...previous,
+                          references: [],
+                        }));
                       }}>
                       Delete
                     </button>
@@ -133,8 +164,14 @@ const DOIPage: NextPage = () => {
               </thead>
               <tbody>
                 {references.map((ref, index) => (
-                  <tr key={ref.issue} className="border-t border-white/20 hover:bg-white/5">
-                    <td className="px-4 py-2">{ref.authors.map((a) => `${a.family} ${a.given}`).join(', ')}</td>
+                  <tr
+                    key={ref.issue}
+                    className="border-t border-white/20 hover:bg-white/5">
+                    <td className="px-4 py-2">
+                      {ref.authors
+                        .map((a) => `${a.family} ${a.given}`)
+                        .join(', ')}
+                    </td>
                     <td className="px-4 py-2">{ref.year}</td>
                     <td className="px-4 py-2">{ref.title}</td>
                     <td className="px-4 py-2">{ref.journal}</td>
@@ -155,8 +192,13 @@ const DOIPage: NextPage = () => {
                         onClick={() => {
                           setState((previous) => {
                             const { references = [] } = previous;
-                            const updatedReferences = references.filter((_, i) => i !== index);
-                            return { ...previous, references: updatedReferences };
+                            const updatedReferences = references.filter(
+                              (_, i) => i !== index,
+                            );
+                            return {
+                              ...previous,
+                              references: updatedReferences,
+                            };
                           });
                         }}>
                         Delete
@@ -171,7 +213,9 @@ const DOIPage: NextPage = () => {
 
         {activeTab === 'apa' && references.length > 0 && (
           <div className="flex flex-col gap-y-4">
-            <h2 className="text-center text-lg font-semibold text-white">References</h2>
+            <h2 className="text-center text-lg font-semibold text-white">
+              References
+            </h2>
             {references.map((ref) => (
               <p key={ref.url} className="text-white">
                 <APA reference={ref} />

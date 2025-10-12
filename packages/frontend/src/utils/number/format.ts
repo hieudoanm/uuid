@@ -20,6 +20,9 @@ export const range = (start: number, stop: number, step = 1): number[] => {
 };
 
 export const formatCurrency = (amount: number, currency: string = 'USD') => {
-  const formatted = new Intl.NumberFormat('vi', { style: 'currency', currency }).format(amount);
+  const formatted = new Intl.NumberFormat('vi', {
+    style: 'currency',
+    currency,
+  }).format(amount);
   return formatted;
 };

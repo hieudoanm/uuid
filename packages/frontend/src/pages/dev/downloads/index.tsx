@@ -106,7 +106,9 @@ const DownloadsPage: NextPage = () => {
               <h3 className="mb-6 text-2xl font-bold capitalize">{category}</h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
                 {items.map(({ id, link, emoji, label }) => (
-                  <div key={`${id}-${category}`} className="flex flex-col gap-y-2 md:gap-y-4">
+                  <div
+                    key={`${id}-${category}`}
+                    className="flex flex-col gap-y-2 md:gap-y-4">
                     <div className="flex items-center justify-between rounded-full border border-neutral-800 p-2 md:p-4">
                       <h4 className="pl-4 text-center text-lg md:text-xl">
                         {emoji} {label}

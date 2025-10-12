@@ -27,7 +27,9 @@ const UUIDPage = () => {
         ].map(({ version, label, value }) => {
           return (
             <>
-              <div key={version} className="flex flex-col items-center gap-4 md:flex-row">
+              <div
+                key={version}
+                className="flex flex-col items-center gap-4 md:flex-row">
                 <Glass.Input
                   id="v4"
                   name="v4"
@@ -43,7 +45,10 @@ const UUIDPage = () => {
                     if (version === 'uuidV1') newUUID = v1();
                     if (version === 'uuidV4') newUUID = v4();
                     if (version === 'uuidV7') newUUID = v7();
-                    setState((previous) => ({ ...previous, [version]: newUUID }));
+                    setState((previous) => ({
+                      ...previous,
+                      [version]: newUUID,
+                    }));
                   }}>
                   {label}
                 </Glass.Button>

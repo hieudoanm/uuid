@@ -1,7 +1,16 @@
 import { Glass } from '@editor/components/shared/Glass';
 import { FC, useState } from 'react';
 
-type TimeUnit = 'milliseconds' | 'seconds' | 'minutes' | 'hours' | 'days' | 'weeks' | 'months' | 'years' | 'date';
+type TimeUnit =
+  | 'milliseconds'
+  | 'seconds'
+  | 'minutes'
+  | 'hours'
+  | 'days'
+  | 'weeks'
+  | 'months'
+  | 'years'
+  | 'date';
 
 // Constants for conversion to milliseconds (base unit)
 const MS_PER_SECOND = 1000;
@@ -73,7 +82,10 @@ const convertTime = (
 };
 
 export const Time: FC = () => {
-  const [{ milliseconds, seconds, minutes, hours, days, weeks, months, years, date }, setState] = useState<{
+  const [
+    { milliseconds, seconds, minutes, hours, days, weeks, months, years, date },
+    setState,
+  ] = useState<{
     milliseconds: number;
     seconds: number;
     minutes: number;
@@ -109,7 +121,9 @@ export const Time: FC = () => {
         { type: 'date' as TimeUnit, value: date },
       ].map(({ type, value }) => {
         return (
-          <div key={type} className="flex items-center justify-center gap-x-2 px-4 py-2">
+          <div
+            key={type}
+            className="flex items-center justify-center gap-x-2 px-4 py-2">
             <span className="capitalize">{type}</span>
             <input
               type="text"
@@ -151,19 +165,55 @@ export const Time: FC = () => {
                 if (type === 'date') {
                   baseMilliseconds = newAmount; // newAmount is already the timestamp for 'date'
                 } else {
-                  baseMilliseconds = convertTime(newAmount, type, 'milliseconds') as number;
+                  baseMilliseconds = convertTime(
+                    newAmount,
+                    type,
+                    'milliseconds',
+                  ) as number;
                 }
 
                 setState((previous) => ({
                   ...previous,
-                  milliseconds: convertTime(baseMilliseconds, 'milliseconds', 'milliseconds') as number,
-                  seconds: convertTime(baseMilliseconds, 'milliseconds', 'seconds') as number,
-                  minutes: convertTime(baseMilliseconds, 'milliseconds', 'minutes') as number,
-                  hours: convertTime(baseMilliseconds, 'milliseconds', 'hours') as number,
-                  days: convertTime(baseMilliseconds, 'milliseconds', 'days') as number,
-                  weeks: convertTime(baseMilliseconds, 'milliseconds', 'weeks') as number,
-                  months: convertTime(baseMilliseconds, 'milliseconds', 'months') as number,
-                  years: convertTime(baseMilliseconds, 'milliseconds', 'years') as number,
+                  milliseconds: convertTime(
+                    baseMilliseconds,
+                    'milliseconds',
+                    'milliseconds',
+                  ) as number,
+                  seconds: convertTime(
+                    baseMilliseconds,
+                    'milliseconds',
+                    'seconds',
+                  ) as number,
+                  minutes: convertTime(
+                    baseMilliseconds,
+                    'milliseconds',
+                    'minutes',
+                  ) as number,
+                  hours: convertTime(
+                    baseMilliseconds,
+                    'milliseconds',
+                    'hours',
+                  ) as number,
+                  days: convertTime(
+                    baseMilliseconds,
+                    'milliseconds',
+                    'days',
+                  ) as number,
+                  weeks: convertTime(
+                    baseMilliseconds,
+                    'milliseconds',
+                    'weeks',
+                  ) as number,
+                  months: convertTime(
+                    baseMilliseconds,
+                    'milliseconds',
+                    'months',
+                  ) as number,
+                  years: convertTime(
+                    baseMilliseconds,
+                    'milliseconds',
+                    'years',
+                  ) as number,
                   date: convertTime(baseMilliseconds, 'milliseconds', 'date'),
                 }));
               }}

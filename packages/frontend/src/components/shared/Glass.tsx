@@ -18,13 +18,12 @@ const baseSharedClasses = `
 `;
 
 /* ---------------- BUTTON ---------------- */
-const Button: FC<{ children: ReactNode; className?: string } & ButtonHTMLAttributes<HTMLButtonElement>> = ({
-  type = 'button',
-  children,
-  className = '',
-  disabled,
-  ...props
-}) => {
+const Button: FC<
+  {
+    children: ReactNode;
+    className?: string;
+  } & ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ type = 'button', children, className = '', disabled, ...props }) => {
   return (
     <button
       type={type}
@@ -39,7 +38,10 @@ const Button: FC<{ children: ReactNode; className?: string } & ButtonHTMLAttribu
 };
 
 /* ---------------- CARD ---------------- */
-const Card: FC<{ children: ReactNode; className?: string }> = ({ children, className = '' }) => {
+const Card: FC<{ children: ReactNode; className?: string }> = ({
+  children,
+  className = '',
+}) => {
   return (
     <div
       className={`relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/30 backdrop-blur-lg transition-all duration-300 sm:p-8 ${className}`}>
@@ -49,19 +51,38 @@ const Card: FC<{ children: ReactNode; className?: string }> = ({ children, class
 };
 
 /* ---------------- INPUT ---------------- */
-const Input: FC<InputHTMLAttributes<HTMLInputElement>> = ({ className = '', ...props }) => {
-  return <input className={`rounded-full px-4 py-2 ${baseSharedClasses} ${className}`} {...props} />;
+const Input: FC<InputHTMLAttributes<HTMLInputElement>> = ({
+  className = '',
+  ...props
+}) => {
+  return (
+    <input
+      className={`rounded-full px-4 py-2 ${baseSharedClasses} ${className}`}
+      {...props}
+    />
+  );
 };
 
 /* ---------------- TEXTAREA ---------------- */
-const TextArea: FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ className = '', ...props }) => {
+const TextArea: FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({
+  className = '',
+  ...props
+}) => {
   return (
-    <textarea rows={4} className={`resize-none rounded-xl px-4 py-3 ${baseSharedClasses} ${className}`} {...props} />
+    <textarea
+      rows={4}
+      className={`resize-none rounded-xl px-4 py-3 ${baseSharedClasses} ${className}`}
+      {...props}
+    />
   );
 };
 
 /* ---------------- SELECT ---------------- */
-const Select: FC<SelectHTMLAttributes<HTMLSelectElement>> = ({ className = '', children, ...props }) => {
+const Select: FC<SelectHTMLAttributes<HTMLSelectElement>> = ({
+  className = '',
+  children,
+  ...props
+}) => {
   return (
     <select
       className={`rounded-full bg-white/10 px-4 py-2 text-white ${baseSharedClasses} appearance-none ${className}`}
@@ -72,7 +93,10 @@ const Select: FC<SelectHTMLAttributes<HTMLSelectElement>> = ({ className = '', c
 };
 
 /* ---------------- BADGE ---------------- */
-const Badge: FC<{ children: ReactNode; className?: string }> = ({ children, className = '' }) => (
+const Badge: FC<{ children: ReactNode; className?: string }> = ({
+  children,
+  className = '',
+}) => (
   <span
     className={`inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium shadow shadow-black/20 backdrop-blur-lg ${className}`}>
     {children}
@@ -80,7 +104,11 @@ const Badge: FC<{ children: ReactNode; className?: string }> = ({ children, clas
 );
 
 /* ---------------- MODAL ---------------- */
-const Modal: FC<{ open: boolean; onClose: () => void; children: ReactNode }> = ({ open, onClose, children }) =>
+const Modal: FC<{
+  open: boolean;
+  onClose: () => void;
+  children: ReactNode;
+}> = ({ open, onClose, children }) =>
   !open ? null : (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
       <div className="relative rounded-2xl border border-white/20 bg-white/10 p-6 shadow-lg backdrop-blur-xl">
@@ -96,7 +124,10 @@ const Modal: FC<{ open: boolean; onClose: () => void; children: ReactNode }> = (
   );
 
 /* ---------------- TOOLTIP ---------------- */
-const Tooltip: FC<{ label: string; children: ReactNode }> = ({ label, children }) => (
+const Tooltip: FC<{ label: string; children: ReactNode }> = ({
+  label,
+  children,
+}) => (
   <div className="group relative">
     {children}
     <span className="absolute bottom-full mb-2 hidden rounded-md bg-black/70 px-2 py-1 text-xs text-white group-hover:block">
@@ -106,7 +137,10 @@ const Tooltip: FC<{ label: string; children: ReactNode }> = ({ label, children }
 );
 
 /* ---------------- CHECKBOX ---------------- */
-const Checkbox: FC<InputHTMLAttributes<HTMLInputElement>> = ({ className = '', ...props }) => (
+const Checkbox: FC<InputHTMLAttributes<HTMLInputElement>> = ({
+  className = '',
+  ...props
+}) => (
   <input
     type="checkbox"
     className={`h-4 w-4 rounded border-white/30 bg-white/10 checked:bg-white/30 focus:ring-white/30 ${className}`}
@@ -115,7 +149,10 @@ const Checkbox: FC<InputHTMLAttributes<HTMLInputElement>> = ({ className = '', .
 );
 
 /* ---------------- RADIO ---------------- */
-const Radio: FC<InputHTMLAttributes<HTMLInputElement>> = ({ className = '', ...props }) => (
+const Radio: FC<InputHTMLAttributes<HTMLInputElement>> = ({
+  className = '',
+  ...props
+}) => (
   <input
     type="radio"
     className={`h-4 w-4 rounded-full border-white/30 bg-white/10 checked:bg-white/30 focus:ring-white/30 ${className}`}
@@ -124,11 +161,11 @@ const Radio: FC<InputHTMLAttributes<HTMLInputElement>> = ({ className = '', ...p
 );
 
 /* ---------------- SWITCH ---------------- */
-const Switch: FC<{ checked: boolean; onChange: () => void; className?: string }> = ({
-  checked,
-  onChange,
-  className = '',
-}) => (
+const Switch: FC<{
+  checked: boolean;
+  onChange: () => void;
+  className?: string;
+}> = ({ checked, onChange, className = '' }) => (
   <div
     role="button"
     className={`relative h-6 w-12 cursor-pointer rounded-full ${checked ? 'bg-white/30' : 'bg-white/10'} ${className}`}
@@ -142,12 +179,12 @@ const Switch: FC<{ checked: boolean; onChange: () => void; className?: string }>
 );
 
 /* ---------------- AVATAR ---------------- */
-const Avatar: FC<{ src: string; alt?: string; size?: number; className?: string }> = ({
-  src,
-  alt,
-  size = 40,
-  className = '',
-}) => (
+const Avatar: FC<{
+  src: string;
+  alt?: string;
+  size?: number;
+  className?: string;
+}> = ({ src, alt, size = 40, className = '' }) => (
   <img
     src={src}
     alt={alt}

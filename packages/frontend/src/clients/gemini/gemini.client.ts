@@ -48,7 +48,9 @@ export const generateContent = async ({
   const headers: HeadersInit = { 'Content-Type': 'application/json' };
   const requestBody = { contents };
   const body: string = JSON.stringify(requestBody);
-  const { data: response, error } = await tryCatch(fetch(url, { method, headers, body, signal: controller.signal }));
+  const { data: response, error } = await tryCatch(
+    fetch(url, { method, headers, body, signal: controller.signal }),
+  );
   if (error) {
     clearTimeout(timer);
     console.error('Error in generateContent:', error);
@@ -56,7 +58,9 @@ export const generateContent = async ({
   }
   if (!response?.ok) {
     clearTimeout(timer);
-    console.error(`Failed to generate content: ${response?.statusText ?? 'Unknown error'}`);
+    console.error(
+      `Failed to generate content: ${response?.statusText ?? 'Unknown error'}`,
+    );
     return null;
   }
   const data: GenerateContentResponse = await response.json();

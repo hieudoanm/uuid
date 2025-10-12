@@ -3,11 +3,11 @@ import { Linear } from '@editor/components/shared/Linear';
 import Link from 'next/link';
 import { FC } from 'react';
 
-export const ErrorTemplate: FC<{ code: string; message: string; action: string }> = ({
-  code = '',
-  message = '',
-  action = '',
-}) => {
+export const ErrorTemplate: FC<{
+  code: string;
+  message: string;
+  action: string;
+}> = ({ code = '', message = '', action = '' }) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-neutral-900 px-4 text-neutral-100">
       <Linear.Background />

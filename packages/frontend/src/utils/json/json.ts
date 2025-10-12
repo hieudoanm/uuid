@@ -20,7 +20,9 @@ const defaultOptions = {
   quote: '"',
 };
 
-export const json2csv = <T extends Record<string, string | number | boolean | Date>>(
+export const json2csv = <
+  T extends Record<string, string | number | boolean | Date>,
+>(
   data: T[],
   { delimiter = ',', headers = [], quote = '"' }: Options = defaultOptions,
 ): string => {
@@ -30,7 +32,9 @@ export const json2csv = <T extends Record<string, string | number | boolean | Da
     headers = uniqueKeys;
   }
 
-  const headerRow: string = headers.map((header: string) => `${quote}${header}${quote}`).join(delimiter);
+  const headerRow: string = headers
+    .map((header: string) => `${quote}${header}${quote}`)
+    .join(delimiter);
   const rows: string = data
     .map((item: Record<string, string | number | boolean | Date>) =>
       headers
@@ -70,7 +74,10 @@ const json2yaml = (json: string) => {
   return stringify(jsonParse(json, {}));
 };
 
-export const json = <T extends Record<string, any>>(data: T | T[], defaultValue: T = {} as T) => {
+export const json = <T extends Record<string, any>>(
+  data: T | T[],
+  defaultValue: T = {} as T,
+) => {
   return {
     parse: () => jsonParse(JSON.stringify(data), defaultValue),
     format: () => {

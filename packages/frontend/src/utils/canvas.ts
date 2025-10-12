@@ -1,7 +1,13 @@
 import html2canvas from 'html2canvas-pro';
 import { RefObject } from 'react';
 
-export const download = async ({ ref, output = '' }: { ref: RefObject<HTMLDivElement | null>; output: string }) => {
+export const download = async ({
+  ref,
+  output = '',
+}: {
+  ref: RefObject<HTMLDivElement | null>;
+  output: string;
+}) => {
   if (ref.current) {
     await new Promise((resolve) => requestAnimationFrame(resolve)); // Wait for rendering
     const canvas = await html2canvas(ref.current, {

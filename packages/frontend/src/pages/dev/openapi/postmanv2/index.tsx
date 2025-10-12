@@ -34,15 +34,16 @@ paths:
 `;
 
 const OpenAPI2PostmanV2Page: NextPage = () => {
-  const [{ input = INITIAL_OPEN_API, output = '', loading = false }, setState] = useState<{
-    input: string;
-    output: string;
-    loading: boolean;
-  }>({
-    input: INITIAL_OPEN_API,
-    output: '',
-    loading: false,
-  });
+  const [{ input = INITIAL_OPEN_API, output = '', loading = false }, setState] =
+    useState<{
+      input: string;
+      output: string;
+      loading: boolean;
+    }>({
+      input: INITIAL_OPEN_API,
+      output: '',
+      loading: false,
+    });
 
   const handleConvert = async () => {
     setState((previous) => ({ ...previous, loading: true, output: '' }));
@@ -60,9 +61,15 @@ const OpenAPI2PostmanV2Page: NextPage = () => {
       }
 
       const result = await res.json();
-      setState((previous) => ({ ...previous, output: JSON.stringify(result, null, 2) }));
+      setState((previous) => ({
+        ...previous,
+        output: JSON.stringify(result, null, 2),
+      }));
     } catch (err: any) {
-      setState((previous) => ({ ...previous, output: `Error: ${err.message}` }));
+      setState((previous) => ({
+        ...previous,
+        output: `Error: ${err.message}`,
+      }));
     } finally {
       setState((previous) => ({ ...previous, loading: false }));
     }
@@ -88,7 +95,12 @@ const OpenAPI2PostmanV2Page: NextPage = () => {
         <div className="grid grow grid-cols-2 divide-x divide-neutral-800">
           <div className="col-span-1 h-full">
             <textarea
-              onChange={(event) => setState((previous) => ({ ...previous, input: event.target.value }))}
+              onChange={(event) =>
+                setState((previous) => ({
+                  ...previous,
+                  input: event.target.value,
+                }))
+              }
               value={input}
               placeholder="Paste OpenAPI (JSON or YAML)"
               className="h-96 h-full w-full p-4 font-mono text-sm focus:outline-none"
@@ -106,12 +118,18 @@ const OpenAPI2PostmanV2Page: NextPage = () => {
         <div className="w-full border-t border-neutral-800" />
         <div className="grid grid-cols-2 gap-2 p-2 md:gap-4 md:p-4">
           <div className="col-span-1">
-            <Glass.Button className="w-full" onClick={handleConvert} disabled={loading}>
+            <Glass.Button
+              className="w-full"
+              onClick={handleConvert}
+              disabled={loading}>
               {loading ? 'Converting...' : 'Convert'}
             </Glass.Button>
           </div>
           <div className="col-span-1">
-            <Glass.Button className="w-full" onClick={handleDownload} disabled={!output || output.startsWith('Error:')}>
+            <Glass.Button
+              className="w-full"
+              onClick={handleDownload}
+              disabled={!output || output.startsWith('Error:')}>
               Download
             </Glass.Button>
           </div>

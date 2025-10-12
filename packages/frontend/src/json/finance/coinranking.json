@@ -437,7 +437,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/VINVMYf0u+lidostakedether-steth",
         "24hVolume": "79204847",
         "btcPrice": "0.03160189661016468",
-        "contractAddresses": ["ethereum/0xae7ab96520de3a18e5e111b5eaab095312d7fe84"],
+        "contractAddresses": [
+          "ethereum/0xae7ab96520de3a18e5e111b5eaab095312d7fe84"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -1035,7 +1037,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/dFlrSolOX+wrappedeeth-weeth",
         "24hVolume": "23911638",
         "btcPrice": "0.03391262470184277",
-        "contractAddresses": ["ethereum/0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee"],
+        "contractAddresses": [
+          "ethereum/0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -1340,7 +1344,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/D7B1x_ks7WhV5+litecoin-ltc",
         "24hVolume": "1315895293",
         "btcPrice": "0.000913229224364734",
-        "contractAddresses": ["cronos/0x9d97be214b68c7051215bb61059b4e299cd792c3"],
+        "contractAddresses": [
+          "cronos/0x9d97be214b68c7051215bb61059b4e299cd792c3"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -1493,7 +1499,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/i5jggxiwp+binance-pegbsc-usd-bsc-usd",
         "24hVolume": "2229411990",
         "btcPrice": "0.000008632970225152",
-        "contractAddresses": ["bnb-smart-chain/0x55d398326f99059ff775485246999027b3197955"],
+        "contractAddresses": [
+          "bnb-smart-chain/0x55d398326f99059ff775485246999027b3197955"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -1539,7 +1547,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/9_jH48RBW+bitcoinbep2-btcb",
         "24hVolume": "45647396",
         "btcPrice": "0.9989627876788496",
-        "contractAddresses": ["bnb-smart-chain/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c"],
+        "contractAddresses": [
+          "bnb-smart-chain/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": "Qwsogvtv82FCd"
       },
@@ -1993,7 +2003,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/DmdX5ntKN+cheelee-cheel",
         "24hVolume": "4420620",
         "btcPrice": "0.000034535331608623",
-        "contractAddresses": ["bnb-smart-chain/0x1F1C90aEb2fd13EA972F0a71e35c0753848e3DB0"],
+        "contractAddresses": [
+          "bnb-smart-chain/0x1F1C90aEb2fd13EA972F0a71e35c0753848e3DB0"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -2395,7 +2407,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/DCrsaMv68+nearprotocol-near",
         "24hVolume": "277322748",
         "btcPrice": "0.000021485464559544",
-        "contractAddresses": ["ethereum/0x85f17cf997934a597031b2e18a9ab6ebd4b9f6a4"],
+        "contractAddresses": [
+          "ethereum/0x85f17cf997934a597031b2e18a9ab6ebd4b9f6a4"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -2441,7 +2455,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/7AQlxzQpQ+ondo-ondo",
         "24hVolume": "795159459",
         "btcPrice": "0.000007918565459695",
-        "contractAddresses": ["ethereum/0xfAbA6f8e4a5E8Ab82F62fe7C39859FA577269BE3"],
+        "contractAddresses": [
+          "ethereum/0xfAbA6f8e4a5E8Ab82F62fe7C39859FA577269BE3"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -2628,7 +2644,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/X8n5GtkPn+jitostakedsol-jitosol",
         "24hVolume": "32526054",
         "btcPrice": "0.00178250208250083",
-        "contractAddresses": ["solana/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn"],
+        "contractAddresses": [
+          "solana/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -2674,7 +2692,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/BoI4ux0nd+mantle-mnt",
         "24hVolume": "165130031",
         "btcPrice": "0.00000623392360209",
-        "contractAddresses": ["ethereum/0x3c3a81e81dc49a522a592e7622a7e711c06bf354"],
+        "contractAddresses": [
+          "ethereum/0x3c3a81e81dc49a522a592e7622a7e711c06bf354"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -2816,7 +2836,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/1Q14FvmvO+pudgypenguins-pengu",
         "24hVolume": "997549281",
         "btcPrice": "2.96655387255e-7",
-        "contractAddresses": ["solana/2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"],
+        "contractAddresses": [
+          "solana/2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -3373,7 +3395,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/9T8gSchgx+officialtrump-trump",
         "24hVolume": "438161933",
         "btcPrice": "0.000076538403841551",
-        "contractAddresses": ["solana/6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN"],
+        "contractAddresses": [
+          "solana/6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -3465,7 +3489,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/CpRpzplUq+skygovernancetoken-sky",
         "24hVolume": "590271",
         "btcPrice": "7.0092381451e-7",
-        "contractAddresses": ["ethereum/0x56072C95FAA701256059aa122697B133aDEd9279"],
+        "contractAddresses": [
+          "ethereum/0x56072C95FAA701256059aa122697B133aDEd9279"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -4058,7 +4084,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/LOO6LmXd7G84Z+kucointoken-kcs",
         "24hVolume": "6930136",
         "btcPrice": "0.000093789428967049",
-        "contractAddresses": ["ethereum/0xf34960d9d60be18cc1d5afc1a6f012a723a28811"],
+        "contractAddresses": [
+          "ethereum/0xf34960d9d60be18cc1d5afc1a6f012a723a28811"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -4153,7 +4181,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/PkY9BmsyW+injectiveprotocol-inj",
         "24hVolume": "171108049",
         "btcPrice": "0.000112739154676053",
-        "contractAddresses": ["ethereum/0xe28b3b32b6c345a34ff64674606124dd5aceca30"],
+        "contractAddresses": [
+          "ethereum/0xe28b3b32b6c345a34ff64674606124dd5aceca30"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -4406,7 +4436,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/n1p-s_gm1+optimism-op",
         "24hVolume": "249958337",
         "btcPrice": "0.000005696667493086",
-        "contractAddresses": ["optimism/0x4200000000000000000000000000000000000042"],
+        "contractAddresses": [
+          "optimism/0x4200000000000000000000000000000000000042"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -4507,7 +4539,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/sM5FzjeAv+formtoken-four",
         "24hVolume": "41374487",
         "btcPrice": "0.000032836924960139",
-        "contractAddresses": ["bnb-smart-chain/0x5b73A93b4E5e4f1FD27D8b3F8C97D69908b5E284"],
+        "contractAddresses": [
+          "bnb-smart-chain/0x5b73A93b4E5e4f1FD27D8b3F8C97D69908b5E284"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -4553,7 +4587,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/lk7ZC4LRS+falconusd-usdf",
         "24hVolume": "6883550",
         "btcPrice": "0.000008633967228517",
-        "contractAddresses": ["ethereum/0xfa2b947eec368f42195f24f36d2af29f7c24cec2"],
+        "contractAddresses": [
+          "ethereum/0xfa2b947eec368f42195f24f36d2af29f7c24cec2"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -4599,7 +4635,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/getivZMsq+confluxnetwork-cfx",
         "24hVolume": "240139428",
         "btcPrice": "0.000001807857435068",
-        "contractAddresses": ["bnb-smart-chain/0x045c4324039da91c52c55df5d785385aab073dcf"],
+        "contractAddresses": [
+          "bnb-smart-chain/0x045c4324039da91c52c55df5d785385aab073dcf"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -4793,7 +4831,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/VDSp0_jlF+fartcoin-fartcoin",
         "24hVolume": "313696931",
         "btcPrice": "0.000008435368455895",
-        "contractAddresses": ["solana/9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"],
+        "contractAddresses": [
+          "solana/9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       },
@@ -4994,7 +5034,9 @@
         "coinrankingUrl": "https://coinranking.com/coin/sZUrmToWF+dogwifhat-wif",
         "24hVolume": "318945141",
         "btcPrice": "0.000007815415954441",
-        "contractAddresses": ["solana/EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"],
+        "contractAddresses": [
+          "solana/EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        ],
         "isWrappedTrustless": false,
         "wrappedTo": null
       }

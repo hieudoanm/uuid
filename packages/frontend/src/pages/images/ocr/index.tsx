@@ -3,7 +3,9 @@ import { Navbar } from '@editor/components/shared/Navbar';
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
-const OCR = dynamic(() => import('@editor/components/apps/images/OCR'), { ssr: false });
+const OCR = dynamic(() => import('@editor/components/apps/images/OCR'), {
+  ssr: false,
+});
 
 const ImagesOCRPage: NextPage = () => {
   return (

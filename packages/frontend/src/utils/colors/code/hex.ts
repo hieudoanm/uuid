@@ -1,4 +1,6 @@
-export const hex2rgb = (hex: string): { r: number; g: number; b: number } | null => {
+export const hex2rgb = (
+  hex: string,
+): { r: number; g: number; b: number } | null => {
   hex = hex.replace('#', '');
   if (hex.length === 3) {
     hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
@@ -63,7 +65,9 @@ export const hex2hsl = (hex: string): { h: number; s: number; l: number } => {
   return { h, s, l: lRounded };
 };
 
-export const hex2cmyk = (hex: string): { c: number; m: number; y: number; k: number } => {
+export const hex2cmyk = (
+  hex: string,
+): { c: number; m: number; y: number; k: number } => {
   // Remove the hash if present
   hex = hex.replace(/^#/, '');
 
@@ -114,7 +118,8 @@ export const hex2oklch = (hex: string): { l: number; c: number; h: number } => {
   const b = parseInt(hex.slice(4, 6), 16) / 255;
 
   // 2. Convert to linear RGB
-  const linearize = (c: number) => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+  const linearize = (c: number) =>
+    c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
 
   const rLin = linearize(r);
   const gLin = linearize(g);

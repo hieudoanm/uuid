@@ -27,8 +27,16 @@ const links = [
     title: 'Dev',
     options: [
       { id: 'downloads', href: '/dev/downloads', label: 'Downloads' },
-      { id: 'openapi2postmanv2', href: '/dev/openapi/postmanv2', label: 'OpenAPI to PostmanV2' },
-      { id: 'uuid', href: '/dev/uuid', label: 'Universally Unique Identifier (UUID)' },
+      {
+        id: 'openapi2postmanv2',
+        href: '/dev/openapi/postmanv2',
+        label: 'OpenAPI to PostmanV2',
+      },
+      {
+        id: 'uuid',
+        href: '/dev/uuid',
+        label: 'Universally Unique Identifier (UUID)',
+      },
     ],
   },
   {
@@ -44,7 +52,11 @@ const links = [
     title: 'GitHub',
     options: [
       { id: 'languages', href: '/github/languages', label: 'Languages' },
-      { id: 'social-preview', href: '/github/preview', label: 'Social Preview' },
+      {
+        id: 'social-preview',
+        href: '/github/preview',
+        label: 'Social Preview',
+      },
     ],
   },
   {

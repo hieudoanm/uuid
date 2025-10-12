@@ -94,7 +94,12 @@ const JSONPage: NextPage = () => {
                   const newData = jsonParse(newFrom, []);
                   const newTo = json(newData).convert(format);
                   setState((previous) => {
-                    return { ...previous, from: newFrom, to: newTo, data: newData };
+                    return {
+                      ...previous,
+                      from: newFrom,
+                      to: newTo,
+                      data: newData,
+                    };
                   });
                 }}
               />

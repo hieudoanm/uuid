@@ -60,7 +60,9 @@ export const Data: FC = () => {
         { type: 'terabyte' as DataUnit, value: terabyte },
       ].map(({ type, value }) => {
         return (
-          <div key={type} className="flex items-center justify-center gap-x-2 px-4 py-2">
+          <div
+            key={type}
+            className="flex items-center justify-center gap-x-2 px-4 py-2">
             <span className="capitalize">{type}</span>
             <input
               type="text" // Use type="number" for numerical inputs
@@ -85,7 +87,11 @@ export const Data: FC = () => {
 
                 setState((previous) => ({
                   ...previous,
-                  bit: convertDataRates(dataRates)({ fromAmount: newAmount, fromUnit: type, toUnit: 'bit' }),
+                  bit: convertDataRates(dataRates)({
+                    fromAmount: newAmount,
+                    fromUnit: type,
+                    toUnit: 'bit',
+                  }),
                   kilobyte: convertDataRates(dataRates)({
                     fromAmount: newAmount,
                     fromUnit: type,

@@ -6,7 +6,9 @@ import { NextPage } from 'next';
 import { ChangeEvent, useRef, useState } from 'react';
 
 const LanguagesPage: NextPage = () => {
-  const [{ repository = 'hieudoanm/hieudoanm' }, setState] = useState<{ repository: string }>({
+  const [{ repository = 'hieudoanm/hieudoanm' }, setState] = useState<{
+    repository: string;
+  }>({
     repository: 'hieudoanm/hieudoanm',
   });
   const divRef = useRef<HTMLDivElement | null>(null);
@@ -23,7 +25,10 @@ const LanguagesPage: NextPage = () => {
             placeholder="GitHub Repository"
             value={repository}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              setState((previous) => ({ ...previous, repository: event.target.value }));
+              setState((previous) => ({
+                ...previous,
+                repository: event.target.value,
+              }));
             }}
           />
           <GitHubLanguages ref={divRef} repository={repository} />
