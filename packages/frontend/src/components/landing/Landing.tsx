@@ -13,14 +13,14 @@ const content = {
     hero: {
       headline: 'The Ultimate In-Browser Toolkit for Devs & Makers',
       tagline:
-        'Edit JSON, convert YAML, redact PDFs, analyze GitHub, generate UUIDs, and more — all locally, instantly, and without signups.',
+        'Edit JSON, convert YAML, analyze GitHub, generate UUIDs, and more — all locally, instantly, and without signups.',
       action: 'Go to Chat',
       href: '/other/chat',
     },
     features: {
       title: 'Blazing-Fast Tools — All in Your Browser',
       subtitle:
-        'From clock utilities to text converters, calculators, redaction tools, and GitHub preview generators — every feature works offline, with privacy built-in. No accounts. No uploads.',
+        'From clock utilities to text converters, calculators, and GitHub preview generators — every feature works offline, with privacy built-in. No accounts. No uploads.',
       // List of features with descriptions and links
       // Each feature has an id, href, title, and description
       features: [
@@ -73,25 +73,17 @@ const content = {
           href: '/dev/openapi/postmanv2',
         },
         {
+          id: 'dev-manifest',
+          title: '📘 Manifest Editor for PWA & Extensions',
+          description:
+            'Edit and validate manifest.json files for Progressive Web Apps and browser extensions with intelligent suggestions and structure-aware editing.',
+          href: '/dev/manifest',
+        },
+        {
           id: 'dev-uuid',
           title: '🆔 UUID Generator',
           description: 'Generate secure UUIDs locally with zero tracking.',
           href: '/dev/uuid',
-        },
-        // Editor
-        {
-          id: 'manifest-editor',
-          title: '📘 Manifest Editor for PWA & Extensions',
-          description:
-            'Edit and validate manifest.json files for Progressive Web Apps and browser extensions with intelligent suggestions and structure-aware editing.',
-          href: '/editor/manifest',
-        },
-        {
-          id: 'pdf-redaction',
-          title: '🛡️ PDF Redaction',
-          description:
-            'Redact sensitive content visually or permanently — all offline.',
-          href: '/editor/redact',
         },
         // GitHub
         {
@@ -162,7 +154,7 @@ const content = {
     callToAction: {
       title: 'All-in-One Productivity & Dev Suite — No Installs Required',
       subtitle:
-        'Whether you’re editing code, converting formats, redacting PDFs, or generating visuals — do it all, instantly, right in your browser.',
+        'Whether you’re editing code, converting formats, or generating visuals — do it all, instantly, right in your browser.',
       action: 'Go to Chat',
       href: '/other/chat',
     },

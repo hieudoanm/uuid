@@ -32,19 +32,12 @@ const links = [
         href: '/dev/openapi/postmanv2',
         label: 'OpenAPI to PostmanV2',
       },
+      { id: 'manifest', href: '/dev/manifest', label: 'Manifest' },
       {
         id: 'uuid',
         href: '/dev/uuid',
         label: 'Universally Unique Identifier (UUID)',
       },
-    ],
-  },
-  {
-    id: 'editor',
-    title: 'Editor',
-    options: [
-      { id: 'manifest', href: '/editor/manifest', label: 'Manifest' },
-      { id: 'redact', href: '/editor/redact', label: 'Redact' },
     ],
   },
   {
