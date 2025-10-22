@@ -32,9 +32,9 @@
     "get:frankfurter": "pnpm ts-node ./scripts/frankfurter.ts"
   },
   "dependencies": {
-    "@capacitor/android": "7.4.3",
-    "@capacitor/core": "7.4.3",
-    "@capacitor/ios": "7.4.3",
+    "@capacitor/android": "7.4.4",
+    "@capacitor/core": "7.4.4",
+    "@capacitor/ios": "7.4.4",
     "@tanstack/react-query": "5.90.5",
     "@trpc/client": "11.6.0",
     "@trpc/next": "11.6.0",
@@ -61,7 +61,7 @@
     "zod": "4.1.12"
   },
   "devDependencies": {
-    "@capacitor/cli": "7.4.3",
+    "@capacitor/cli": "7.4.4",
     "@eslint/eslintrc": "3.3.1",
     "@tailwindcss/postcss": "4.1.15",
     "@tauri-apps/cli": "2.9.1",
