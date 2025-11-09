@@ -154,8 +154,8 @@ importers:
         specifier: 16.0.1
         version: 16.0.1(@typescript-eslint/parser@8.46.2(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       fabric:
-        specifier: 6.7.1
-        version: 6.7.1(encoding@0.1.13)
+        specifier: 6.9.0
+        version: 6.9.0(encoding@0.1.13)
       file-saver:
         specifier: 2.0.5
         version: 2.0.5
@@ -1958,10 +1958,6 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
 
-  detect-libc@2.0.4:
-    resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
-    engines: {node: '>=8'}
-
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
@@ -2220,8 +2216,8 @@ packages:
     resolution: {integrity: sha512-u/feCi0GPsI+988gU2FLcsHyAHTU0MX1Wg68NhAnN7z/+C5wqG+CY8J53N9ioe8RXgaoz0nBR/TYMf3AycUuPw==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
 
-  fabric@6.7.1:
-    resolution: {integrity: sha512-dLxSmIvN4InJf4xOjbl1LFWh8WGOUIYtcuDIGs2IN0Z9lI0zGobfesDauyEhI1+owMLTPCCiEv01rpYXm7g2EQ==}
+  fabric@6.9.0:
+    resolution: {integrity: sha512-ILIbG4Us/41Z4rU8/gveN4Hb7NvgBorqV9xj+9Dl7YsXiyUPXdxV8+q5OvaNghmYzQoK1Am3m0wTvmovOxrJAg==}
     engines: {node: '>=16.20.0'}
 
   fast-deep-equal@3.1.3:
@@ -5209,7 +5205,7 @@ snapshots:
 
   '@mapbox/node-pre-gyp@1.0.11(encoding@0.1.13)':
     dependencies:
-      detect-libc: 2.0.4
+      detect-libc: 2.1.2
       https-proxy-agent: 5.0.1
       make-dir: 3.1.0
       node-fetch: 2.7.0(encoding@0.1.13)
@@ -6302,9 +6298,6 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  detect-libc@2.0.4:
-    optional: true
-
   detect-libc@2.1.2: {}
 
   detect-newline@3.1.0: {}
@@ -6720,7 +6713,7 @@ snapshots:
       jest-mock: 30.2.0
       jest-util: 30.2.0
 
-  fabric@6.7.1(encoding@0.1.13):
+  fabric@6.9.0(encoding@0.1.13):
     optionalDependencies:
       canvas: 2.11.2(encoding@0.1.13)
       jsdom: 20.0.3(canvas@2.11.2(encoding@0.1.13))
