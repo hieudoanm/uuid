@@ -80,6 +80,12 @@ const content = {
           href: '/dev/manifest',
         },
         {
+          id: 'dev-downloads',
+          title: '📘 Download Page',
+          description: 'Download CLI and Application',
+          href: '/dev/downloads',
+        },
+        {
           id: 'dev-uuid',
           title: '🆔 UUID Generator',
           description: 'Generate secure UUIDs locally with zero tracking.',
