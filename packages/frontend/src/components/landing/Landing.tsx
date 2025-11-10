@@ -14,8 +14,8 @@ const content = {
       headline: 'The Ultimate In-Browser Toolkit for Devs & Makers',
       tagline:
         'Edit JSON, convert YAML, analyze GitHub, generate UUIDs, and more — all locally, instantly, and without signups.',
-      action: 'Go to Chat',
-      href: '/other/chat',
+      action: 'Go to Pomodoro',
+      href: '/clock/pomodoro',
     },
     features: {
       title: 'Blazing-Fast Tools — All in Your Browser',
@@ -130,13 +130,6 @@ const content = {
           href: '/other/calculator',
         },
         {
-          id: 'chat-tool',
-          title: '💬 AI Chat',
-          description:
-            'Use a built-in AI chat assistant for productivity, questions, or coding help — locally in your browser.',
-          href: '/other/chat',
-        },
-        {
           id: 'doi-tool',
           title: '🔗 DOI Reference Lookup',
           description:
@@ -155,8 +148,8 @@ const content = {
       title: 'All-in-One Productivity & Dev Suite — No Installs Required',
       subtitle:
         'Whether you’re editing code, converting formats, or generating visuals — do it all, instantly, right in your browser.',
-      action: 'Go to Chat',
-      href: '/other/chat',
+      action: 'Go to Status',
+      href: '/other/status',
     },
   },
 };

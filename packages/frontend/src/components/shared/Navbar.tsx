@@ -66,7 +66,6 @@ const links = [
     title: 'Other',
     options: [
       { id: 'calculator', href: '/other/calculator', label: 'Calculator' },
-      { id: 'chat', href: '/other/chat', label: 'Chat' },
       { id: 'doi', href: '/other/doi', label: 'DOI' },
       { id: 'status', href: '/other/status', label: 'Status' },
     ],
