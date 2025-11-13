@@ -44,7 +44,7 @@
     "marked": "17.0.0",
     "next": "16.0.1",
     "openai": "6.8.1",
-    "openapi-to-postmanv2": "5.3.5",
+    "openapi-to-postmanv2": "5.4.0",
     "pino": "10.1.0",
     "qrcode": "1.5.4",
     "react": "19.2.0",
