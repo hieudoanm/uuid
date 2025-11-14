@@ -87,5 +87,5 @@
     "typescript": "5.9.3",
     "yaml": "2.8.1"
   },
-  "packageManager": "pnpm@10.21.0"
+  "packageManager": "pnpm@10.22.0"
 }
