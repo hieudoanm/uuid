@@ -35,7 +35,7 @@
     "@capacitor/android": "7.4.4",
     "@capacitor/core": "7.4.4",
     "@capacitor/ios": "7.4.4",
-    "@tanstack/react-query": "5.90.8",
+    "@tanstack/react-query": "5.90.9",
     "dompurify": "3.3.0",
     "gif.js": "0.2.0",
     "github-markdown-css": "5.8.1",
