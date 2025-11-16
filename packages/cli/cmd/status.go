@@ -4,8 +4,10 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
-	"fmt"
+	"log"
+	"mark/utils"
 
+	"github.com/AlecAivazis/survey/v2"
 	"github.com/spf13/cobra"
 )
 
@@ -20,7 +22,29 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("status called")
+		// Step 1: Choose service
+		var service string
+
+		services := make(map[string]string)
+		services["github"] = "https://www.githubstatus.com/api/v2/status.json"
+		services["netlify"] = "https://www.netlifystatus.com/api/v2/status.json"
+		services["render"] = "https://status.render.com/api/v2/status.json"
+		services["supabase"] = "https://status.supabase.com/api/v2/status.json"
+		services["vercel"] = "https://www.vercel-status.com/api/v2/status.json"
+
+		servicePrompt := &survey.Select{
+			Message:  "Choose a service:",
+			Options:  []string{"github", "netlify", "render", "supabase", "vercel"},
+			Default:  "github",
+			PageSize: 1,
+		}
+		if err := survey.AskOne(servicePrompt, &service); err != nil {
+			log.Fatalf("Failed to choose service: %v", err)
+		}
+
+		var url string = services[service]
+		// Step 2
+		utils.PrintStatus(url)
 	},
 }
 
