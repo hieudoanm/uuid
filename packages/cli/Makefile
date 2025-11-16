@@ -1,21 +1,26 @@
+.PHONY: lint format build install all
+
+BIN_DIR := bin
+BIN_NAME := micro
+SRC := ./main.go
+
+## Commands
 lint:
 	go vet ./...
 
 format:
 	go fmt ./...
 
-build:
-	go vet ./...
-	go fmt ./...
-	rm -rf ./bin
-	go build -o ./bin/micro ./main.go
+## Build binary into ./bin
+build: format lint
+	@mkdir -p $(BIN_DIR)
+	go build -o $(BIN_DIR)/$(BIN_NAME) $(SRC)
 
-install:
-	go vet ./...
-	go fmt ./...
-	rm -rf ./bin
-	go build -o ./bin/micro ./main.go
-	mkdir -p ~/bin
-	cp ./bin/micro ~/bin/
-	chmod +x ~/bin/micro
-	export PATH="$(HOME)/bin:$(PATH)"
+## Install binary into ~/bin
+install: build
+	@mkdir -p $(HOME)/bin
+	cp $(BIN_DIR)/$(BIN_NAME) $(HOME)/bin/
+	chmod +x $(HOME)/bin/$(BIN_NAME)
+	@echo "Installed to $$HOME/bin"
+	@echo "Make sure $$HOME/bin is in your PATH:"
+	@echo '  export PATH="$$HOME/bin:$$PATH"'
