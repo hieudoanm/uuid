@@ -26,15 +26,21 @@ to quickly create a Cobra application.`,
 		var service string
 
 		services := make(map[string]string)
+		services["cloudflare"] = "https://www.cloudflarestatus.com/api/v2/status.json"
+		services["flyio"] = "https://status.flyio.net/api/v2/status.json"
 		services["github"] = "https://www.githubstatus.com/api/v2/status.json"
+		services["hedera"] = "https://status.hedera.com/api/v2/status.json"
 		services["netlify"] = "https://www.netlifystatus.com/api/v2/status.json"
+		services["npm"] = "https://status.npmjs.org/api/v2/status.json"
+		services["polygon"] = "https://status.polygon.technology/api/v2/status.json"
 		services["render"] = "https://status.render.com/api/v2/status.json"
+		services["solana"] = "https://status.solana.com/api/v2/status.json"
 		services["supabase"] = "https://status.supabase.com/api/v2/status.json"
 		services["vercel"] = "https://www.vercel-status.com/api/v2/status.json"
 
 		servicePrompt := &survey.Select{
 			Message:  "Choose a service:",
-			Options:  []string{"github", "netlify", "render", "supabase", "vercel"},
+			Options:  []string{"cloudflare", "flyio", "github", "hedera", "netlify", "npm", "polygon", "render", "solana", "supabase", "vercel"},
 			Default:  "github",
 			PageSize: 1,
 		}
