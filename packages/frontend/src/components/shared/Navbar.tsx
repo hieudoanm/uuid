@@ -29,7 +29,6 @@ const links = [
     title: 'Other',
     options: [
       { id: 'doi', href: '/other/doi', label: 'DOI' },
-      { id: 'football', href: '/other/football', label: 'Football' },
       { id: 'status', href: '/other/status', label: 'Status' },
     ],
   },

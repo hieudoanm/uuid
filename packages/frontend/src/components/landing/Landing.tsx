@@ -61,12 +61,6 @@ const content = {
           href: '/other/doi',
         },
         {
-          id: 'football-tool',
-          title: '🔗 Football Formation',
-          description: 'Football Formation tools for Liverpool',
-          href: '/other/football',
-        },
-        {
           id: 'status-dashboard',
           title: '📊 Status Monitor',
           description: 'Check the current system status and service uptime.',
