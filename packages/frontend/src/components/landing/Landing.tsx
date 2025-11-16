@@ -15,29 +15,15 @@ const content = {
       tagline:
         'Generate UUIDs, and more — all locally, instantly, and without signups.',
       action: 'Go to Pomodoro',
-      href: '/clock/pomodoro',
+      href: '/other/pomodoro',
     },
     features: {
       title: 'Blazing-Fast Tools — All in Your Browser',
       subtitle:
-        'From clock utilities to text converters, calculators — every feature works offline, with privacy built-in. No accounts. No uploads.',
+        'From pomodoro to text converters, calculators — every feature works offline, with privacy built-in. No accounts. No uploads.',
       // List of features with descriptions and links
       // Each feature has an id, href, title, and description
       features: [
-        // Clock
-        {
-          id: 'pomodoro-timer',
-          title: '⏳ Pomodoro Timer',
-          description:
-            'Boost focus and productivity with guided Pomodoro sessions.',
-          href: '/clock/pomodoro',
-        },
-        {
-          id: 'timezone-viewer',
-          title: '🌍 Timezone Viewer',
-          description: 'Compare global timezones at a glance.',
-          href: '/clock/timezones',
-        },
         // Dev
         {
           id: 'dev-manifest',
@@ -53,6 +39,13 @@ const content = {
           href: '/dev/uuid',
         },
         // Other
+        {
+          id: 'pomodoro-timer',
+          title: '⏳ Pomodoro Timer',
+          description:
+            'Boost focus and productivity with guided Pomodoro sessions.',
+          href: '/other/pomodoro',
+        },
         {
           id: 'doi-tool',
           title: '🔗 DOI Reference Lookup',

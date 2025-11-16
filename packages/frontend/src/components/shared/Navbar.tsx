@@ -5,14 +5,6 @@ import { Dropdown } from './Dropdown';
 
 const links = [
   {
-    id: 'clock',
-    title: 'Clock',
-    options: [
-      { id: 'pomodoro', href: '/clock/pomodoro', label: 'Pomodoro' },
-      { id: 'timezones', href: '/clock/timezones', label: 'Timezones' },
-    ],
-  },
-  {
     id: 'dev',
     title: 'Dev',
     options: [
@@ -30,6 +22,7 @@ const links = [
     options: [
       { id: 'doi', href: '/other/doi', label: 'DOI' },
       { id: 'status', href: '/other/status', label: 'Status' },
+      { id: 'pomodoro', href: '/other/pomodoro', label: 'Pomodoro' },
     ],
   },
 ];
