@@ -47,7 +47,7 @@ export const getWork = async ({
   const abortController = new AbortController();
   const timer = setTimeout(() => abortController.abort(), timeout);
   const url = `https://api.crossref.org/works/${id}`;
-  const proxyUrl = `https://micro24.vercel.app/api/reverse/proxy?url=${url}`;
+  const proxyUrl = `https://hieudoanm-reverse-proxy.vercel.app/api?url=${url}`;
   const method: string = 'GET';
   const headers: HeadersInit = { 'Content-Type': 'application/json' };
   const { data: response, error } = await tryCatch(
