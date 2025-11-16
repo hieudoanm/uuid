@@ -22,9 +22,6 @@
     "format": "turbo run format",
     "prepare": "husky || true"
   },
-  "dependencies": {
-    "@silvia-odwyer/photon": "0.3.3"
-  },
   "devDependencies": {
     "husky": "9.1.7",
     "rimraf": "6.1.0",

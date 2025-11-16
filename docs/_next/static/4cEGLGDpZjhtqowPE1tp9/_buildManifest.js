@@ -25,18 +25,9 @@ self.__BUILD_MANIFEST = {
   ],
   "/other/doi": [
     "static/chunks/6b689e59f00bf8ce.js"
-<<<<<<<< HEAD:docs/_next/static/gl_VWHtPXRs-LlJKzw_pp/_buildManifest.js
-  ],
-  "/other/football": [
-    "static/chunks/0f1d5bdf9df7718c.js"
-  ],
-  "/other/status": [
-    "static/chunks/9273a0636ac1adc3.js"
-========
   ],
   "/other/status": [
     "static/chunks/97a5d08b1a27a568.js"
->>>>>>>> 7bf519d (remove football):docs/_next/static/qE6mLqgO-Zuo1jmURPEfp/_buildManifest.js
   ],
   "__rewrites": {
     "afterFiles": [],
