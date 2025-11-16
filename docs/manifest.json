@@ -1,0 +1,10 @@
+{
+  "name": "Micro – In-Browser Editor & Utility Suite",
+  "short_name": "Micro",
+  "description": "A privacy-first, in-browser tool to edit, convert, redact, and calculate — no uploads, no nonsense.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#171717",
+  "theme_color": "#171717",
+  "orientation": "portrait"
+}

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Focus",
+  "version": "1.0",
+  "description": "Blocks a list of websites you define.",
+  "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "focus@example.com",
+      "strict_min_version": "57.0"
+    }
+  }
+}
