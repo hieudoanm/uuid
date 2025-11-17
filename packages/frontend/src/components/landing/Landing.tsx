@@ -1,11 +1,11 @@
-import { CallToAction } from '@editor/components/landing/CallToAction';
-import { Features } from '@editor/components/landing/Features';
-import { Footer } from '@editor/components/landing/Footer';
-import { Hero } from '@editor/components/landing/Hero';
-import { Logos } from '@editor/components/landing/Logos';
-import { Divider } from '@editor/components/shared/Divider';
-import { Linear } from '@editor/components/shared/Linear';
-import { Navbar } from '@editor/components/shared/Navbar';
+import { CallToAction } from '@micro/components/landing/CallToAction';
+import { Features } from '@micro/components/landing/Features';
+import { Footer } from '@micro/components/landing/Footer';
+import { Hero } from '@micro/components/landing/Hero';
+import { Logos } from '@micro/components/landing/Logos';
+import { Divider } from '@micro/components/shared/Divider';
+import { Linear } from '@micro/components/shared/Linear';
+import { Navbar } from '@micro/components/shared/Navbar';
 import { FC } from 'react';
 
 const content = {
@@ -15,7 +15,7 @@ const content = {
       tagline:
         'Generate UUIDs, and more — all locally, instantly, and without signups.',
       action: 'Go to Pomodoro',
-      href: '/other/pomodoro',
+      href: '/apps/pomodoro',
     },
     features: {
       title: 'Blazing-Fast Tools — All in Your Browser',
@@ -24,34 +24,25 @@ const content = {
       // List of features with descriptions and links
       // Each feature has an id, href, title, and description
       features: [
-        // Dev
         {
-          id: 'dev-manifest',
-          title: '📘 Manifest Editor for PWA & Extensions',
-          description:
-            'Edit and validate manifest.json files for Progressive Web Apps and browser extensions with intelligent suggestions and structure-aware editing.',
-          href: '/dev/manifest',
-        },
-        {
-          id: 'dev-uuid',
-          title: '🆔 UUID Generator',
-          description: 'Generate secure UUIDs locally with zero tracking.',
-          href: '/dev/uuid',
-        },
-        // Other
-        {
-          id: 'pomodoro-timer',
-          title: '⏳ Pomodoro Timer',
-          description:
-            'Boost focus and productivity with guided Pomodoro sessions.',
-          href: '/other/pomodoro',
-        },
-        {
-          id: 'doi-tool',
+          id: 'doi',
           title: '🔗 DOI Reference Lookup',
           description:
             'Retrieve and format scholarly references from DOI links in APA style.',
-          href: '/other/doi',
+          href: '/apps/doi',
+        },
+        {
+          id: 'pomodoro',
+          title: '⏳ Pomodoro Timer',
+          description:
+            'Boost focus and productivity with guided Pomodoro sessions.',
+          href: '/apps/pomodoro',
+        },
+        {
+          id: 'uuid',
+          title: '🆔 UUID Generator',
+          description: 'Generate secure UUIDs locally with zero tracking.',
+          href: '/apps/uuid',
         },
       ],
     },
@@ -60,7 +51,7 @@ const content = {
       subtitle:
         'Whether you’re editing code, converting formats, or generating visuals — do it all, instantly, right in your browser.',
       action: 'Go to Pomodoro',
-      href: '/other/pomodoro',
+      href: '/apps/pomodoro',
     },
   },
 };

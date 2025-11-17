@@ -1,4 +1,4 @@
-import { APP_NAME } from '@editor/constants/app';
+import { APP_NAME } from '@micro/constants/app';
 import Link from 'next/link';
 import { FC } from 'react';
 

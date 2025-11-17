@@ -1,5 +1,5 @@
-import { APP_NAME } from '@editor/constants/app';
-import '@editor/styles/globals.css';
+import { APP_NAME } from '@micro/constants/app';
+import '@micro/styles/globals.css';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -28,14 +28,14 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content={`${APP_NAME} — a privacy-first in-browser editor and utility suite.`}
+          content={`${APP_NAME} — a privacy-first in-browser micro and utility suite.`}
         />
         <meta name="theme-color" content="#171717" />
         {/* Open Graph tags */}
         <meta property="og:title" content={APP_NAME} />
         <meta
           property="og:description"
-          content={`${APP_NAME} — a privacy-first in-browser editor and utility suite.`}
+          content={`${APP_NAME} — a privacy-first in-browser micro and utility suite.`}
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/favicon.png" />
@@ -45,7 +45,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="twitter:title" content={APP_NAME} />
         <meta
           name="twitter:description"
-          content={`${APP_NAME} — a privacy-first in-browser editor and utility suite.`}
+          content={`${APP_NAME} — a privacy-first in-browser micro and utility suite.`}
         />
         <meta name="twitter:image" content="/favicon.png" />
       </Head>

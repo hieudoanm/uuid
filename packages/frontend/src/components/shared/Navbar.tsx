@@ -1,27 +1,20 @@
-import { APP_NAME } from '@editor/constants/app';
+import { APP_NAME } from '@micro/constants/app';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Dropdown } from './Dropdown';
 
 const links = [
   {
-    id: 'dev',
-    title: 'Dev',
+    id: 'apps',
+    title: 'Apps',
     options: [
-      { id: 'manifest', href: '/dev/manifest', label: 'Manifest' },
+      { id: 'doi', href: '/apps/doi', label: 'DOI' },
+      { id: 'pomodoro', href: '/apps/pomodoro', label: 'Pomodoro' },
       {
         id: 'uuid',
-        href: '/dev/uuid',
+        href: '/apps/uuid',
         label: 'Universally Unique Identifier (UUID)',
       },
-    ],
-  },
-  {
-    id: 'other',
-    title: 'Other',
-    options: [
-      { id: 'doi', href: '/other/doi', label: 'DOI' },
-      { id: 'pomodoro', href: '/other/pomodoro', label: 'Pomodoro' },
     ],
   },
 ];

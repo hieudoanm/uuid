@@ -1,4 +1,4 @@
-import { tryCatch } from '@editor/utils/try-catch';
+import { tryCatch } from '@micro/utils/try-catch';
 
 type Author = { given: string; family: string };
 

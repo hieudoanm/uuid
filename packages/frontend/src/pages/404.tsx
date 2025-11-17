@@ -1,4 +1,4 @@
-import { ErrorTemplate } from '@editor/templates/ErrorTemplate';
+import { ErrorTemplate } from '@micro/templates/ErrorTemplate';
 import { NextPage } from 'next';
 
 const NotFoundPage: NextPage = () => {

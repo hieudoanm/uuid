@@ -1,4 +1,4 @@
-import { Glass } from '@editor/components/shared/Glass';
+import { Glass } from '@micro/components/shared/Glass';
 import Link from 'next/link';
 import { FC } from 'react';
 
