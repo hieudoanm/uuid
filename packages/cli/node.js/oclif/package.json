@@ -29,7 +29,7 @@
     "@types/node": "24.10.0",
     "eslint": "9.39.1",
     "globals": "16.5.0",
-    "oclif": "4.22.41",
+    "oclif": "4.22.47",
     "prettier": "3.6.2",
     "ts-node": "10.9.2",
     "typescript": "5.9.3",
