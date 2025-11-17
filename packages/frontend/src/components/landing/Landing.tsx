@@ -53,20 +53,14 @@ const content = {
             'Retrieve and format scholarly references from DOI links in APA style.',
           href: '/other/doi',
         },
-        {
-          id: 'status-dashboard',
-          title: '📊 Status Monitor',
-          description: 'Check the current system status and service uptime.',
-          href: '/other/status',
-        },
       ],
     },
     callToAction: {
       title: 'All-in-One Productivity & Dev Suite — No Installs Required',
       subtitle:
         'Whether you’re editing code, converting formats, or generating visuals — do it all, instantly, right in your browser.',
-      action: 'Go to Status',
-      href: '/other/status',
+      action: 'Go to Pomodoro',
+      href: '/other/pomodoro',
     },
   },
 };

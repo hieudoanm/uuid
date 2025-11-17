@@ -21,7 +21,6 @@ const links = [
     title: 'Other',
     options: [
       { id: 'doi', href: '/other/doi', label: 'DOI' },
-      { id: 'status', href: '/other/status', label: 'Status' },
       { id: 'pomodoro', href: '/other/pomodoro', label: 'Pomodoro' },
     ],
   },
