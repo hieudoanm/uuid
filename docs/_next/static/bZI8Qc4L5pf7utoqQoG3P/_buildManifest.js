@@ -1,6 +1,6 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/1bad92fb9e689ba5.js"
+    "static/chunks/03dd8c0140e4f486.js"
   ],
   "/404": [
     "static/chunks/7b74207464b0bfc6.js"
@@ -11,14 +11,11 @@ self.__BUILD_MANIFEST = {
   "/_error": [
     "static/chunks/929639b9197498ca.js"
   ],
-  "/apps/doi": [
-    "static/chunks/f06ab4d41d43ee82.js"
-  ],
   "/apps/pomodoro": [
-    "static/chunks/f4bec65846a19db3.js"
+    "static/chunks/8a4a103b6a6a439e.js"
   ],
   "/apps/uuid": [
-    "static/chunks/820bcaf6d84baeb2.js"
+    "static/chunks/3ce3872ff324b4e9.js"
   ],
   "__rewrites": {
     "afterFiles": [],
@@ -31,7 +28,6 @@ self.__BUILD_MANIFEST = {
     "/500",
     "/_app",
     "/_error",
-    "/apps/doi",
     "/apps/pomodoro",
     "/apps/uuid"
   ]

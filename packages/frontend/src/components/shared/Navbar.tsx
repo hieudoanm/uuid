@@ -8,7 +8,6 @@ const links = [
     id: 'apps',
     title: 'Apps',
     options: [
-      { id: 'doi', href: '/apps/doi', label: 'DOI' },
       { id: 'pomodoro', href: '/apps/pomodoro', label: 'Pomodoro' },
       {
         id: 'uuid',

@@ -25,13 +25,6 @@ const content = {
       // Each feature has an id, href, title, and description
       features: [
         {
-          id: 'doi',
-          title: '🔗 DOI Reference Lookup',
-          description:
-            'Retrieve and format scholarly references from DOI links in APA style.',
-          href: '/apps/doi',
-        },
-        {
           id: 'pomodoro',
           title: '⏳ Pomodoro Timer',
           description:
