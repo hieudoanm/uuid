@@ -12,25 +12,17 @@ const content = {
   landing: {
     hero: {
       headline: 'The Ultimate In-Browser Toolkit for Devs & Makers',
-      tagline:
-        'Generate UUIDs, and more — all locally, instantly, and without signups.',
-      action: 'Go to Pomodoro',
-      href: '/apps/pomodoro',
+      tagline: 'Generate UUIDs  — all locally, instantly, and without signups.',
+      action: 'Go to UUID',
+      href: '/apps/uuid',
     },
     features: {
       title: 'Blazing-Fast Tools — All in Your Browser',
       subtitle:
-        'From pomodoro to text converters, calculators — every feature works offline, with privacy built-in. No accounts. No uploads.',
+        'From uuid to crypto converters — every feature works offline, with privacy built-in. No accounts. No uploads.',
       // List of features with descriptions and links
       // Each feature has an id, href, title, and description
       features: [
-        {
-          id: 'pomodoro',
-          title: '⏳ Pomodoro Timer',
-          description:
-            'Boost focus and productivity with guided Pomodoro sessions.',
-          href: '/apps/pomodoro',
-        },
         {
           id: 'uuid',
           title: '🆔 UUID Generator',
@@ -43,8 +35,8 @@ const content = {
       title: 'All-in-One Productivity & Dev Suite — No Installs Required',
       subtitle:
         'Whether you’re editing code, converting formats, or generating visuals — do it all, instantly, right in your browser.',
-      action: 'Go to Pomodoro',
-      href: '/apps/pomodoro',
+      action: 'Go to UUID',
+      href: '/apps/uuid',
     },
   },
 };
