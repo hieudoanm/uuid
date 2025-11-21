@@ -1,4 +1,4 @@
-import { APP_NAME } from '@micro/constants/app';
+import { APP_NAME } from '@uuid/constants/app';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -11,7 +11,7 @@ export const Footer: FC = () => {
         </p>
         <div className="space-x-4">
           <Link
-            href="https://github.com/hieudoanm/micro"
+            href="https://github.com/hieudoanm/uuid"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline">

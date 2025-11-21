@@ -1,16 +1,16 @@
 // components/Logos.tsx
-import alibabaQwen from '@micro/svg/alibaba-qwen.svg';
-import anthropicClaude from '@micro/svg/anthropic-claude.svg';
-import deepseek from '@micro/svg/deepseek.svg';
-import googleGemini from '@micro/svg/google-gemini.svg';
-import metaLlama from '@micro/svg/meta-llama.svg';
-import microsoftCopilot from '@micro/svg/microsoft-copilot.svg';
-import mistral from '@micro/svg/mistral.svg';
-import moonshotAIKimi from '@micro/svg/moonshootai-kimi.svg';
-import nvidia from '@micro/svg/nvidia.svg';
-import openAIChatGPT from '@micro/svg/openai-chatgpt.svg';
-import perplexity from '@micro/svg/perplexity.svg';
-import xGrok from '@micro/svg/xai-grok.svg';
+import alibabaQwen from '@uuid/svg/alibaba-qwen.svg';
+import anthropicClaude from '@uuid/svg/anthropic-claude.svg';
+import deepseek from '@uuid/svg/deepseek.svg';
+import googleGemini from '@uuid/svg/google-gemini.svg';
+import metaLlama from '@uuid/svg/meta-llama.svg';
+import microsoftCopilot from '@uuid/svg/microsoft-copilot.svg';
+import mistral from '@uuid/svg/mistral.svg';
+import moonshotAIKimi from '@uuid/svg/moonshootai-kimi.svg';
+import nvidia from '@uuid/svg/nvidia.svg';
+import openAIChatGPT from '@uuid/svg/openai-chatgpt.svg';
+import perplexity from '@uuid/svg/perplexity.svg';
+import xGrok from '@uuid/svg/xai-grok.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -49,10 +49,10 @@ const logos: Logo[] = [
     href: 'https://ai.meta.com/llama/',
   },
   {
-    id: 'microsoft-copilot',
+    id: 'uuidsoft-copilot',
     src: microsoftCopilot.src,
-    alt: 'Microsoft Copilot',
-    href: 'https://copilot.microsoft.com',
+    alt: 'uuidsoft Copilot',
+    href: 'https://copilot.uuidsoft.com',
   },
   {
     id: 'mistral',

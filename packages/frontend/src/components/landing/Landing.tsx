@@ -1,11 +1,11 @@
-import { CallToAction } from '@micro/components/landing/CallToAction';
-import { Features } from '@micro/components/landing/Features';
-import { Footer } from '@micro/components/landing/Footer';
-import { Hero } from '@micro/components/landing/Hero';
-import { Logos } from '@micro/components/landing/Logos';
-import { Divider } from '@micro/components/shared/Divider';
-import { Linear } from '@micro/components/shared/Linear';
-import { Navbar } from '@micro/components/shared/Navbar';
+import { CallToAction } from '@uuid/components/landing/CallToAction';
+import { Features } from '@uuid/components/landing/Features';
+import { Footer } from '@uuid/components/landing/Footer';
+import { Hero } from '@uuid/components/landing/Hero';
+import { Logos } from '@uuid/components/landing/Logos';
+import { Divider } from '@uuid/components/shared/Divider';
+import { Linear } from '@uuid/components/shared/Linear';
+import { Navbar } from '@uuid/components/shared/Navbar';
 import { FC } from 'react';
 
 const content = {

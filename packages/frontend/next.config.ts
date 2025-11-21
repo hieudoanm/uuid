@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   images: { unoptimized: true },
-  basePath: NODE_ENV === 'development' ? '' : '/micro',
+  basePath: NODE_ENV === 'development' ? '' : '/uuid',
   output: NODE_ENV === 'development' ? 'standalone' : 'export',
   distDir: NODE_ENV === 'development' ? '.next' : '../../docs',
 };

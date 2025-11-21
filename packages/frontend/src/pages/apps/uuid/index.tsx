@@ -1,6 +1,6 @@
-import { Divider } from '@micro/components/shared/Divider';
-import { Glass } from '@micro/components/shared/Glass';
-import { Navbar } from '@micro/components/shared/Navbar';
+import { Divider } from '@uuid/components/shared/Divider';
+import { Glass } from '@uuid/components/shared/Glass';
+import { Navbar } from '@uuid/components/shared/Navbar';
 import { useState } from 'react';
 import { v1, v4, v7 } from 'uuid';
 

@@ -1,17 +1,17 @@
 {
-  "name": "@micro/app",
+  "name": "@uuid/app",
   "version": "0.0.1",
-  "description": "micro",
+  "description": "uuid",
   "keywords": [
-    "micro"
+    "uuid"
   ],
-  "homepage": "https://github.com/hieudoanm/micro#readme",
+  "homepage": "https://github.com/hieudoanm/uuid#readme",
   "bugs": {
-    "url": "https://github.com/hieudoanm/micro/issues"
+    "url": "https://github.com/hieudoanm/uuid/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/hieudoanm/micro.git"
+    "url": "git+ssh://git@github.com/hieudoanm/uuid.git"
   },
   "license": "GPL-3.0",
   "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",

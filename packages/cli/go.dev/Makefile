@@ -1,7 +1,7 @@
 .PHONY: lint format build install all
 
 BIN_DIR := bin
-BIN_NAME := micro
+BIN_NAME := uuid
 SRC := ./main.go
 
 ## Commands
